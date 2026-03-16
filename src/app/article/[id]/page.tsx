@@ -7,7 +7,7 @@ import { generateArticleSchema, siteConfig } from '@/lib/seo';
 import ShareButtons from '@/components/ShareButtons';
 import CommentsSection from '@/components/CommentsSection';
 import { getCommentsByArticleId } from '@/lib/comments';
-import React from 'react';
+import ProfessionalContentRenderer from '@/components/ProfessionalContentRenderer';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -54,81 +54,6 @@ const categoryColors: Record<string, string> = {
   defense: '#DC2626',
   osint: '#0891B2',
 };
-
-function ContentRenderer({ content }: { content: string }) {
-  const lines = content.split('\n');
-  const elements: React.ReactNode[] = [];
-  let key = 0;
-  
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (!line) continue;
-    
-    // Section header (##)
-    if (line.startsWith('## ')) {
-      elements.push(
-        <div key={key++} style={{ marginTop: '48px', marginBottom: '20px' }}>
-          <h2 style={{ 
-            fontSize: '1.75rem', 
-            fontWeight: 700,
-            color: 'var(--text-primary)',
-            marginBottom: '16px',
-            paddingBottom: '12px',
-            borderBottom: '2px solid var(--accent-primary)'
-          }}>
-            {line.replace('## ', '')}
-          </h2>
-        </div>
-      );
-      continue;
-    }
-    
-    // Subsection (###)
-    if (line.startsWith('### ')) {
-      elements.push(
-        <h3 key={key++} style={{ 
-          fontSize: '1.35rem', 
-          fontWeight: 600, 
-          marginTop: '32px',
-          marginBottom: '16px',
-          color: 'var(--text-primary)'
-        }}>
-          {line.replace('### ', '')}
-        </h3>
-      );
-      continue;
-    }
-    
-    // Sub-subsection (####)
-    if (line.startsWith('#### ')) {
-      elements.push(
-        <h4 key={key++} style={{ 
-          fontSize: '1.15rem', 
-          fontWeight: 600, 
-          marginTop: '24px',
-          marginBottom: '12px',
-          color: 'var(--text-secondary)'
-        }}>
-          {line.replace('#### ', '')}
-        </h4>
-      );
-      continue;
-    }
-    
-    // Regular paragraph
-    elements.push(
-      <p key={key++} style={{ 
-        marginBottom: '20px', 
-        lineHeight: 1.85,
-        color: 'var(--text-primary)'
-      }}>
-        {line}
-      </p>
-    );
-  }
-  
-  return <div style={{ fontSize: '1.125rem' }}>{elements}</div>;
-}
 
 export default async function ArticlePage({ params }: PageProps) {
   const { id } = await params;
@@ -291,7 +216,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <ShareButtons title={article.title} url={`/article/${article.id}`} />
           </div>
           
-          <ContentRenderer content={article.content} />
+          <ProfessionalContentRenderer content={article.content} />
           
           {relatedArticles.length > 0 && (
             <div style={{ marginTop: '72px', paddingTop: '48px', borderTop: '3px solid var(--accent-primary)' }}>
