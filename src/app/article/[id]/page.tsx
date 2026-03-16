@@ -5,7 +5,8 @@ import Link from 'next/link';
 import ClientArticleWrapper from './ClientArticleWrapper';
 import { generateArticleSchema, siteConfig } from '@/lib/seo';
 import ShareButtons from '@/components/ShareButtons';
-import Giscus from '@/components/Giscus';
+import CommentsSection from '@/components/CommentsSection';
+import { getCommentsByArticleId } from '@/lib/comments';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -64,6 +65,7 @@ export default async function ArticlePage({ params }: PageProps) {
   const category = categories.find(c => c.id === article.category);
   const color = categoryColors[article.category];
   const articleSchema = generateArticleSchema(article);
+  const comments = getCommentsByArticleId(id);
   
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -291,13 +293,7 @@ export default async function ArticlePage({ params }: PageProps) {
             </div>
           )}
           
-          <Giscus 
-            repo="axelcoudassot06-debug/Sentinelle-Pulse"
-            repoId="R_placeholder"
-            category="Comments"
-            categoryId="DIC_placeholder"
-            mapping="pathname"
-          />
+          <CommentsSection comments={comments} />
         </div>
       </article>
     </>
