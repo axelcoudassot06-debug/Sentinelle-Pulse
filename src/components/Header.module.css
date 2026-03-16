@@ -1,0 +1,125 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navLink:hover {
+  color: var(--accent-primary);
+}
+
+.navLinkActive {
+  color: var(--accent-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.searchBtn:hover {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+.themeToggle {
+  background: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.themeToggle:hover {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  padding: 8px;
+}
+
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.mobileNavOpen {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  
+  .mobileMenuBtn {
+    display: flex;
+  }
+  
+  .headerInner {
+    padding: 12px 16px;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+}

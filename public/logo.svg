@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C41E3A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E3A5F;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="100" fill="none"/>
+  
+  <!-- Shield / Pulse icon -->
+  <path d="M50 15 L90 25 L90 55 Q90 85 50 90 Q10 85 10 55 L10 25 Z" 
+        fill="url(#grad)" 
+        opacity="0.9"/>
+  
+  <!-- Pulse line -->
+  <path d="M25 50 L35 50 L40 35 L50 65 L60 35 L65 50 L85 50" 
+        stroke="white" 
+        stroke-width="3" 
+        fill="none" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Text -->
+  <text x="105" y="45" 
+        font-family="Georgia, serif" 
+        font-size="32" 
+        font-weight="bold" 
+        fill="#1A1A2E">
+    SENTINELLE
+  </text>
+  
+  <text x="105" y="75" 
+        font-family="Arial, sans-serif" 
+        font-size="20" 
+        font-weight="300" 
+        letter-spacing="8" 
+        fill="#C41E3A">
+    PULSE
+  </text>
+</svg>
