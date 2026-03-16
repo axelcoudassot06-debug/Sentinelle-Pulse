@@ -50,8 +50,13 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <Link href="/" className={styles.logo}>
-          <img src="/logo.png" alt="Sentinelle Pulse" style={{ height: '40px', marginRight: '12px' }} />
-          <span style={{ fontWeight: 700, fontSize: '1.25rem', letterSpacing: '1px' }}>SENTINELLE PULSE</span>
+          <img src="/logo.png" alt="Sentinelle Pulse" style={{ height: '45px', marginRight: '16px' }} />
+          <span style={{ 
+            fontWeight: 800, 
+            fontSize: '1.5rem', 
+            letterSpacing: '2px',
+            color: 'var(--text-primary)'
+          }}>SENTINELLE PULSE</span>
         </Link>
 
         <nav className={styles.nav}>
