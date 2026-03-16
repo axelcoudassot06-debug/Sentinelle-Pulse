@@ -1,7 +1,7 @@
 'use client';
 
 import { Share2, Check } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface ShareButtonsProps {
   title: string;
@@ -10,10 +10,13 @@ interface ShareButtonsProps {
 
 export default function ShareButtons({ title, url }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const [shareUrl, setShareUrl] = useState('https://sentinelle-pulse.vercel.app' + url);
 
-  const shareUrl = typeof window !== 'undefined' 
-    ? `${window.location.origin}${url}` 
-    : url;
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setShareUrl(`${window.location.origin}${url}`);
+    }
+  }, [url]);
 
   const handleShare = async () => {
     if (navigator.share) {
