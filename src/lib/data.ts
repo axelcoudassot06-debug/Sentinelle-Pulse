@@ -22,7 +22,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 14,
-    "image": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1200&q=80",
     "featured": true,
     "trending": true
   },
@@ -35,7 +35,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 14,
-    "image": "https://images.unsplash.com/photo-1518173946687-a4c036bc5c20?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1476973422084-e0fa66ff9456?w=1200&q=80",
     "featured": true,
     "trending": true
   },
@@ -43,12 +43,12 @@ export const articles: Article[] = [
     "id": "3",
     "title": "Guerre commerciale: Les tarifs Trump secouent l'économie mondiale",
     "excerpt": "■ Chronologie",
-    "content": "■ Chronologie\n\n1. De 2018 à 2026 : l'escalade tarifaire en huit actes\n\n■ Impact sectoriel Europe\n\n2. Impact sur l'Europe : secteurs, flux et contre-mesures\n\nL'Union européenne exporte environ 500 milliards de dollars de biens vers les États-Unis par an. Avec un droit universel de 20 % et des tarifs sectoriels (25 % acier-aluminium, menace sur automobiles), l'impact potentiel est considérable. L'UE a préparé deux listes de contre-mesures représentant environ 18 milliards d'euros de droits additionnels sur les exportaciones américaines — mais ne les a pas encore déclenchées, préférant la négociation.\n\n■ Impact sur les BRICS & émergents\n\n3. Les BRICS+ : bénéficiaires involontaires ou victimes collatérales ?\n\nLa guerre commerciale US-Chine crée des effets de détournement massifs. Les pays capables de jouer le rôle d'intermédiaire — manufacturier pour la Chine ou assemblant des composants chinois — bénéficient de flux de commandes redirigés. Mais les BRICS dans leur ensemble font face à un dilemme : se rapprolier de Pékin au risque de subir des sanctions secondaires américaines, ou ménager Washington au risque d'être perçus comme des partenaires de second rang.\n\n■ Réorientation des supply chains\n\n4. Reconfiguration mondiale des chaînes de valeur\n\nLe vrai impact à long terme des tarifs Trump 2.0 n'est pas le coût direct — c'est la reconfiguration structurelle des chaînes d'approvisionnement mondiales. Les entreprises ne peuvent pas absorber indéfiniment des droits de 20 à 145 % : elles relocalisent, elles diversifient leurs fournisseurs, ou elles absorbent les marges. Cette transformation est irréversible : une fois une supply chain reconfigurée, elle ne revient pas à son état antérieur même si les tarifs disparaissent.\n\n■ Prospective\n\n5. Trois scénarios à horizon 2027\n\n■ Cartographie & Actions\n\n6. Cartographie actionnable\n\n6.2 Playbook stratégique : trois horizons\n\n■ Conclusion\n\nLa fin du libre-échange comme cadre par défaut\n...",
+    "content": "■ Chronologie\n\n1. De 2018 à 2026 : l'escalade tarifaire en huit actes\n\n■ Impact sectoriel Europe\n\n2. Impact sur l'Europe : secteurs, flux et contre-mesures\n\nL'Union européenne exporte environ 500 milliards de dollars de biens vers les États-Unis par an. Avec un droit universel de 20 % et des tarifs sectoriels (25 % acier-aluminium, menace sur automobiles), l'impact potentiel est considérable. L'UE a préparé deux listes de contre-mesures représentant environ 18 milliards d'euros de droits additionnels sur les exportaciones américaines — mais ne les a pas encore déclenchées, préférant la négociation.\n\n■ Impact sur les BRICS & émergents\n\n3. Les BRICS+ : bénéficiaires involontaires ou victimes collatérales ?\n\nLa guerre commerciale US-Chine crée des effets de détournement massifs. Les pays capables de jouer le rôle d'intermédiaire — manufacturier pour la Chine ou assemblant des composants chinois — bénéficient de flux de commandes redirigés. Mais les BRICS dans leur ensemble font face à un dilemme : se rapprolier de Pékin au risque de subir des sanctions secondaires américaines, ou ménager Washington au risque d'être perçus comme des partenaires de second rang.\n\n■ Réorientation des supply chains\n\n4. Reconfiguration mondiale des chaînes de valeur\n\nLe vrai impact à long terme des tarifs Trump 2.0 n'est pas le coût direct — c'est la reconfiguration structurelle des chaînes d'approvisionnement mondiales. Les entreprises ne peuvent pas absorber indéfiniment des droits de 20 à 145 % : elles relocalisent, elles diversifient leurs fournisseurs, ou elles absorbent les marges. Cette transformation est irréversible : une fois une supply chain reconfigurée, elle ne revient pas à son état antérieur même si les tarifs disparaissent.\n\n■ Prospective\n\n5. Trois scénarios à horizon 2027\n\n■ Cartographie & Actions\n\n6. Cartographie actionnable\n\n6.2 Playbook stratégique : trois horizons\n\n■ Conclusion\n\nLa fin du libre-échange comme cadre par déf...",
     "category": "geopolitique",
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 10,
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1200&q=80",
     "featured": false,
     "trending": true
   },
@@ -56,12 +56,12 @@ export const articles: Article[] = [
     "id": "4",
     "title": "mBridge: Le système de paiement qui défie le dollar",
     "excerpt": "■ Contexte & genèse",
-    "content": "■ Contexte & genèse\n\n1. Pourquoi SWIFT est devenu une arme géopolitique\n\nSWIFT — Society for Worldwide Interbank Financial Telecommunication — est le système de messagerie interbancaire qui coordonne la quasi-totalité des règlements internationaux. Créé en 1973, il connecte plus de 11 000 institutions financières dans 200 pays. Sa gouvernance est belge, mais son architecture est profondément imbriquée dans le système bancaire correspondant en dollars américains.\n\nL'exclusion de la Russie du réseau SWIFT en mars 2022 — décision sans précédent dans l'histoire du système financier international — a constitué un signal d'alarme pour toutes les puissances qui se savent potentiellement exposées aux sanctions occidentales. Elle a démontré que l'infrastructure financière internationale pouvait être utilisée comme instrument de coercition géopolitique. La réaction a été immédiate dans les capitales de Pékin, Moscou, New Delhi, Riyad et Téhéran.\n\n■ Anatomie de mBridge\n\n2. mBridge : architecture, avancement et limites\n\nmBridge (Multiple Central Bank Digital Currency Bridge) est le projet le plus avancé de règlement multidevises via thérapeutiens numériques de banques centrales (MNBC). Il a été développé sous l'égide du Centre d'Innovation de la BRI de Hong Kong, en collaboration avec la Banque populaire de Chine, la Banque centrale des ÉAU, la Banque de Thaïlande et l'Autorité monétaire de Hong Kong.\n\n2.1 L'architecture technique de mBridge\n\nmBridge repose sur une blockchain permissioned (accès contrôlé) baptisée mBridge Ledger, développée à partir de la technologie PBFT (Practical Byzantine Fault Tolerance). Chaque banque centrale participante opère un nœud. Les règlements s'effectuent en MNBC (monnaies numériques de banque centrale) — e-CNY pour la Chine, e-Dirham pour les ÉAU, CBDC-Bath pour la Thaïlande. La conversion entre devises est atomique (simultanée), éliminant le risque de règlement Herstatt qui affecte les échanges de change traditionnel...",
+    "content": "■ Contexte & genèse\n\n1. Pourquoi SWIFT est devenu une arme géopolitique\n\nSWIFT — Society for Worldwide Interbank Financial Telecommunication — est le système de messagerie interbancaire qui coordonne la quasi-totalité des règlements internationaux. Créé en 1973, il connecte plus de 11 000 institutions financières dans 200 pays. Sa gouvernance est belge, mais son architecture est profondément imbriquée dans le système bancaire correspondant en dollars américains.\n\nL'exclusion de la Russie du réseau SWIFT en mars 2022 — décision sans précédent dans l'histoire du système financier international — a constitué un signal d'alarme pour toutes les puissances qui se savent potentiellement exposées aux sanctions occidentales. Elle a démontré que l'infrastructure financière internationale pouvait être utilisée comme instrument de coercition géopolitique. La réaction a été immédiate dans les capitales de Pékin, Moscou, New Delhi, Riyad et Téhéran.\n\n■ Anatomie de mBridge\n\n2. mBridge : architecture, avancement et limites\n\nmBridge (Multiple Central Bank Digital Currency Bridge) est le projet le plus avancé de règlement multidevises via thérapeutiens numériques de banques centrales (MNBC). Il a été développé sous l'égide du Centre d'Innovation de la BRI de Hong Kong, en collaboration avec la Banque populaire de Chine, la Banque centrale des ÉAU, la Banque de Thaïlande et l'Autorité monétaire de Hong Kong.\n\n2.1 L'architecture technique de mBridge\n\nmBridge repose sur une blockchain permissioned (accès contrôlé) baptisée mBridge Ledger, développée à partir de la technologie PBFT (Practical Byzantine Fault Tolerance). Chaque banque centrale participante opère un nœud. Les règlements s'effectuent en MNBC (monnaies numériques de banque centrale) — e-CNY pour la Chine, e-Dirham pour les ÉAU, CBDC-Bath pour la Thaïlande. La conversion entre devises est atomique (simultanée), éliminant le risque de règlement Herstatt qui affecte les échanges de change traditi...",
     "category": "geopolitique",
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 10,
-    "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=1200&q=80",
     "featured": false,
     "trending": true
   },
@@ -74,7 +74,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 10,
-    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
     "featured": false,
     "trending": false
   },
@@ -87,7 +87,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 10,
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1200&q=80",
     "featured": false,
     "trending": false
   },
@@ -95,12 +95,12 @@ export const articles: Article[] = [
     "id": "7",
     "title": "LNG Europe 2027: Le gaz liquéfié change la donne",
     "excerpt": "■ La rupture 2021–2026",
-    "content": "■ La rupture 2021–2026\n\n1. De la dépendance au gazoduc à la diversification forcée\n\nLa transformation de l'approvisionnement gazier européen entre 2021 et 2026 est l'un des plus grands chocs d'infrastructure énergétique de l'histoire économique récente. En l'espace de trois ans, l'Europe a réussi à se sevrer de 30 points de pourcentage de dépendance au gaz russe — un exploit logistique et financier considérable, réalisé dans l'urgence et à un coût très élevé pour les industriels et les ménages européens.\n\n■ La nouvelle géographie gazière\n\n2. La triangulaire gazière : États-Unis, Qatar, Norvège\n\nL'Europe de 2026 s'approvisionne selon une géographie radicalement différente de 2021. Trois fournisseurs dominent : les États-Unis (GNL, ~50 % des imports GNL européens), le Qatar (GNL, ~15 %), et la Norvège (gazoduc, ~30 % de la consommation totale). Le gaz russe subsiste marginalement via le TurkStream (Balkans, Turquie) et quelques contrats bilatéraux.\n\n■ La guerre des prix\n\n3. TTF vs Henry Hub : la mécanique des spreads et des arbitrages\n\nLe marché du GNL est devenu un marché mondial arbitrageable. Les cargaisons GNL se dirigent vers le marché qui offre le meilleur prix net après transport. Le spread TTF-Henry Hub (prix européen moins prix américain) est le déterminant principal de la direction des flux atlantiques. Quand le spread est élevé (>5 $/MMBtu), les exportateurs américains redirigent leurs cargaisons vers l'Europe. Quand il est faible ou négatif, elles vont vers l'Asie.\n\n■ TurkStream & gaz résiduel russe\n\n4. Le gaz russe résiduel : TurkStream et les dépendances persistantes\n\nMalgré la rupture spectaculaire de la dépendance gazière européenne, le gaz russe n'a pas complètement disparu du mix européen. Le gazoduc TurkStream (capacité 31,5 Mrd m³/an) continue d'approvisionner la Turquise, la Bulgarie, la Serbie, la Hongratie et une partie de la Slovaquie. Ces pays restent dans une zone grise : officiellement alignés sur les sanct...",
+    "content": "■ La rupture 2021–2026\n\n1. De la dépendance au gazoduc à la diversification forcée\n\nLa transformation de l'approvisionnement gazier européen entre 2021 et 2026 est l'un des plus grands chocs d'infrastructure énergétique de l'histoire économique récente. En l'espace de trois ans, l'Europe a réussi à se sevrer de 30 points de pourcentage de dépendance au gaz russe — un exploit logistique et financier considérable, réalisé dans l'urgence et à un coût très élevé pour les industriels et les ménages européens.\n\n■ La nouvelle géographie gazière\n\n2. La triangulaire gazière : États-Unis, Qatar, Norvège\n\nL'Europe de 2026 s'approvisionne selon une géographie radicalement différente de 2021. Trois fournisseurs dominent : les États-Unis (GNL, ~50 % des imports GNL européens), le Qatar (GNL, ~15 %), et la Norvège (gazoduc, ~30 % de la consommation totale). Le gaz russe subsiste marginalement via le TurkStream (Balkans, Turquise) et quelques contrats bilatéraux.\n\n■ La guerre des prix\n\n3. TTF vs Henry Hub : la mécanique des spreads et des arbitrages\n\nLe marché du GNL est devenu un marché mondial arbitrageable. Les cargaisons GNL se dirigent vers le marché qui offre le meilleur prix net après transport. Le spread TTF-Henry Hub (prix européen moins prix américain) est le déterminant principal de la direction des flux atlantiques. Quand le spread est élevé (>5 $/MMBtu), les exportateurs américains redirigent leurs cargaisons vers l'Europe. Quand il est faible ou négatif, elles vont vers l'Asie.\n\n■ TurkStream & gaz résiduel russe\n\n4. Le gaz russe résiduel : TurkStream et les dépendances persistantes\n\nMalgré la rupture spectaculaire de la dépendance gazière européenne, le gaz russe n'a pas complètement disparu du mix européen. Le gazoduc TurkStream (capacité 31,5 Mrd m³/an) continue d'approvisionner la Turquise, la Bulgarie, la Serbie, la Hongratie et une partie de la Slovaquie. Ces pays restent dans une zone grise : officiellement alignés sur les sanct...",
     "category": "economie",
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 10,
-    "image": "https://images.unsplash.com/photo-1611273426728-c15a8e290037?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1474314170901-f351b68f544f?w=1200&q=80",
     "featured": false,
     "trending": false
   },
@@ -113,7 +113,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 12,
-    "image": "https://images.unsplash.com/photo-1561515465-9b4d8b19e3c3?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=1200&q=80",
     "featured": false,
     "trending": false
   },
@@ -126,7 +126,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 11,
-    "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1200&q=80",
     "featured": false,
     "trending": false
   },
@@ -139,7 +139,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 11,
-    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
     "featured": false,
     "trending": false
   },
@@ -152,11 +152,11 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 6,
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
     "featured": false,
     "trending": false
   },
-{
+  {
     "id": "12",
     "title": "Pénurie d'eau: La crise mondiale silencieuse",
     "excerpt": "■ La géographie du stress hydrique",
@@ -165,7 +165,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 7,
-    "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80",
     "featured": false,
     "trending": false
   },
@@ -178,7 +178,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 6,
-    "image": "https://images.unsplash.com/photo-1494564605686-2e931f77a8e2?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1494564605686-2e931f77a8e2?w=1200&q=80",
     "featured": false,
     "trending": false
   },
@@ -191,7 +191,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 14,
-    "image": "https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=1200&q=80",
     "featured": false,
     "trending": false
   }
