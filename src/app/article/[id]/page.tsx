@@ -242,7 +242,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <div>
               <div style={{ fontWeight: 600 }}>{article.author}</div>
               <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                Journaliste chez Sentinelle Pulse
+                Fondateur & Directeur de Sentinelle Pulse
               </div>
             </div>
           </div>
