@@ -296,6 +296,7 @@ export default async function ArticlePage({ params }: PageProps) {
             repoId="R_placeholder"
             category="Comments"
             categoryId="DIC_placeholder"
+            mapping="pathname"
           />
         </div>
       </article>
