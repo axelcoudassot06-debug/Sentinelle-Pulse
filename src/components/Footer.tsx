@@ -52,7 +52,7 @@ export default function Footer() {
           <div>
             <h4 className={styles.footerTitle}>Suivez-nous</h4>
             <div className={styles.socials}>
-              <a href="#" className={styles.socialLink}><TikTokIcon /></a>
+              <a href="https://www.tiktok.com/@sentinelle.pulse" target="_blank" rel="noopener noreferrer" className={styles.socialLink}><TikTokIcon /></a>
               <a href="https://www.linkedin.com/company/110721071" target="_blank" rel="noopener noreferrer" className={styles.socialLink}><Linkedin size={18} /></a>
               <a href="#" className={styles.socialLink}><Github size={18} /></a>
             </div>
