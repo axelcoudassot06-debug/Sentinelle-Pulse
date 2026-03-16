@@ -54,6 +54,178 @@ const categoryColors: Record<string, string> = {
   osint: '#0891B2',
 };
 
+function ContentRenderer({ content }: { content: string }) {
+  const sections = content.split('■ ');
+  
+  return (
+    <div style={{ lineHeight: 1.9 }}>
+      {sections.map((section, index) => {
+        if (!section.trim()) return null;
+        
+        const lines = section.split('\n');
+        const title = lines[0].trim();
+        const rest = lines.slice(1).join('\n');
+        
+        if (index === 0) {
+          return (
+            <div key={index}>
+              {title && (
+                <p style={{ 
+                  fontSize: '1.25rem', 
+                  fontWeight: 500, 
+                  color: 'var(--text-secondary)',
+                  marginBottom: '32px',
+                  borderLeft: '3px solid var(--accent-primary)',
+                  paddingLeft: '20px'
+                }}>
+                  {title}
+                </p>
+              )}
+              {rest && (
+                <div style={{ whiteSpace: 'pre-wrap', color: 'var(--text-primary)' }}>
+                  {rest.split('\n\n').map((para, pIndex) => {
+                    if (para.startsWith('1.') || para.startsWith('2.') || para.startsWith('3.')) {
+                      return (
+                        <div key={pIndex} style={{ marginBottom: '24px' }}>
+                          {para.split('\n').map((line, lIndex) => (
+                            <p key={lIndex} style={{ marginBottom: '8px' }}>
+                              {line}
+                            </p>
+                          ))}
+                        </div>
+                      );
+                    }
+                    if (para.startsWith('-') || para.startsWith('•')) {
+                      const items = para.split('\n').filter(l => l.trim());
+                      return (
+                        <ul key={pIndex} style={{ 
+                          marginBottom: '24px', 
+                          paddingLeft: '24px',
+                          listStyle: 'none'
+                        }}>
+                          {items.map((item, i) => (
+                            <li key={i} style={{ 
+                              marginBottom: '12px',
+                              position: 'relative',
+                              paddingLeft: '20px'
+                            }}>
+                              <span style={{ 
+                                position: 'absolute', 
+                                left: 0, 
+                                color: 'var(--accent-primary)' 
+                              }}>▸</span>
+                              {item.replace(/^[‑•]\s*/, '')}
+                            </li>
+                          ))}
+                        </ul>
+                      );
+                    }
+                    return (
+                      <p key={pIndex} style={{ marginBottom: '20px' }}>
+                        {para}
+                      </p>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        }
+        
+        const hasSubSections = rest.includes('\n1.') || rest.includes('\n2.') || rest.includes('\n3.');
+        
+        return (
+          <div key={index} style={{ 
+            marginTop: '48px',
+            paddingTop: '32px',
+            borderTop: '1px solid var(--border)'
+          }}>
+            <h2 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: 700,
+              marginBottom: '24px',
+              color: 'var(--text-primary)'
+            }}>
+              {title}
+            </h2>
+            <div style={{ whiteSpace: 'pre-wrap', color: 'var(--text-primary)' }}>
+              {rest.split('\n\n').map((para, pIndex) => {
+                if (para.match(/^\d+\.\s/) || para.match(/^\d+\.\d+/)) {
+                  return (
+                    <div key={pIndex} style={{ marginBottom: '24px' }}>
+                      {para.split('\n').map((line, lIndex) => {
+                        if (line.match(/^\d+\.\s/) && !line.match(/\.\d+/)) {
+                          return (
+                            <h3 key={lIndex} style={{ 
+                              fontSize: '1.125rem', 
+                              fontWeight: 600, 
+                              marginTop: '24px',
+                              marginBottom: '12px',
+                              color: 'var(--text-primary)'
+                            }}>
+                              {line}
+                            </h3>
+                          );
+                        }
+                        if (line.match(/^\d+\.\d+\s/)) {
+                          return (
+                            <p key={lIndex} style={{ 
+                              marginBottom: '8px',
+                              paddingLeft: '16px',
+                              borderLeft: '2px solid var(--border)'
+                            }}>
+                              {line}
+                            </p>
+                          );
+                        }
+                        return (
+                          <p key={lIndex} style={{ marginBottom: '8px' }}>
+                            {line}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  );
+                }
+                if (para.startsWith('-') || para.startsWith('•')) {
+                  const items = para.split('\n').filter(l => l.trim());
+                  return (
+                    <ul key={pIndex} style={{ 
+                      marginBottom: '24px', 
+                      paddingLeft: '24px',
+                      listStyle: 'none'
+                    }}>
+                      {items.map((item, i) => (
+                        <li key={i} style={{ 
+                          marginBottom: '12px',
+                          position: 'relative',
+                          paddingLeft: '20px'
+                        }}>
+                          <span style={{ 
+                            position: 'absolute', 
+                            left: 0, 
+                            color: 'var(--accent-primary)' 
+                          }}>▸</span>
+                          {item.replace(/^[‑•]\s*/, '')}
+                        </li>
+                      ))}
+                    </ul>
+                  );
+                }
+                return (
+                  <p key={pIndex} style={{ marginBottom: '20px' }}>
+                    {para}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default async function ArticlePage({ params }: PageProps) {
   const { id } = await params;
   const article = getArticleById(id);
@@ -115,83 +287,80 @@ export default async function ArticlePage({ params }: PageProps) {
       />
       
       <article>
-        <div className="container" style={{ paddingTop: '32px' }}>
-          <Link href="/" style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '8px',
-            color: 'var(--text-secondary)',
-            marginBottom: '24px',
-            fontSize: '0.875rem'
-          }}>
-            <ArrowLeft size={16} />
-            Retour à l&apos;accueil
-          </Link>
-          
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
-            <Link 
-              href={`/${article.category}`}
-              style={{ 
-                display: 'inline-block',
-                padding: '6px 14px',
-                borderRadius: '6px',
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                backgroundColor: `${color}20`,
-                color,
-                transition: 'transform var(--transition)',
-              }}
-            >
-              {category?.name}
+        <div style={{ background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}>
+          <div className="container" style={{ padding: '24px 16px', maxWidth: '900px' }}>
+            <Link href="/" style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '8px',
+              color: 'var(--text-secondary)',
+              fontSize: '0.875rem',
+              marginBottom: '32px'
+            }}>
+              <ArrowLeft size={16} />
+              Retour à l'accueil
             </Link>
             
-            <ClientArticleWrapper 
-              articleTitle={article.title}
-              articleContent={article.content}
-            />
-          </div>
-          
-          <h1 style={{ 
-            fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', 
-            lineHeight: 1.2,
-            marginBottom: '24px'
-          }}>
-            {article.title}
-          </h1>
-          
-          <div style={{ 
-            display: 'flex', 
-            gap: '24px',
-            color: 'var(--text-secondary)',
-            marginBottom: '32px',
-            fontSize: '0.875rem',
-            flexWrap: 'wrap',
-            alignItems: 'center'
-          }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Calendar size={16} />
-              {formattedDate}
-            </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Clock size={16} />
-              {article.readTime} min de lecture
-            </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              Par <strong style={{ color: 'var(--text-primary)' }}>{article.author}</strong>
-            </span>
-            <div style={{ marginLeft: 'auto', display: 'flex', gap: '12px' }}>
-              <ShareButtons title={article.title} url={`/article/${article.id}`} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px', flexWrap: 'wrap' }}>
+              <Link 
+                href={`/${article.category}`}
+                style={{ 
+                  display: 'inline-block',
+                  padding: '6px 14px',
+                  borderRadius: '6px',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  backgroundColor: `${color}15`,
+                  color,
+                }}
+              >
+                {category?.name}
+              </Link>
+              <ClientArticleWrapper 
+                articleTitle={article.title}
+                articleContent={article.content}
+              />
+            </div>
+            
+            <h1 style={{ 
+              fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', 
+              lineHeight: 1.2,
+              marginBottom: '24px',
+              fontWeight: 800
+            }}>
+              {article.title}
+            </h1>
+            
+            <div style={{ 
+              display: 'flex', 
+              gap: '24px',
+              color: 'var(--text-secondary)',
+              marginBottom: '8px',
+              fontSize: '0.9375rem',
+              flexWrap: 'wrap',
+              alignItems: 'center'
+            }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <Calendar size={16} />
+                {formattedDate}
+              </span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <Clock size={16} />
+                {article.readTime} min de lecture
+              </span>
+              <span>
+                Par <strong style={{ color: 'var(--text-primary)' }}>{article.author}</strong>
+              </span>
             </div>
           </div>
         </div>
         
         <div style={{ 
           width: '100%',
-          maxHeight: '500px',
-          overflow: 'hidden',
-          marginBottom: '48px'
+          height: '400px',
+          overflow: 'hidden'
         }}>
           <img 
             src={article.image} 
@@ -200,93 +369,94 @@ export default async function ArticlePage({ params }: PageProps) {
           />
         </div>
         
-        <div className="container" style={{ maxWidth: '800px' }}>
+        <div className="container" style={{ maxWidth: '800px', padding: '48px 24px' }}>
           <div style={{ 
-            fontSize: '1.125rem', 
-            lineHeight: 1.8,
-            color: 'var(--text-primary)',
-            whiteSpace: 'pre-wrap'
-          }}>
-            <p style={{ marginBottom: '24px', fontWeight: 500, fontSize: '1.25rem' }}>
-              {article.excerpt}
-            </p>
-            <div style={{ marginBottom: '24px' }}>
-              {article.content}
-            </div>
-          </div>
-          
-          <div style={{ 
-            marginTop: '32px', 
-            padding: '20px', 
-            background: 'var(--surface)',
-            borderRadius: '12px',
-            border: '1px solid var(--border)',
             display: 'flex',
+            justifyContent: 'space-between',
             alignItems: 'center',
-            gap: '16px'
+            marginBottom: '40px',
+            paddingBottom: '24px',
+            borderBottom: '1px solid var(--border)'
           }}>
-            <div style={{ 
-              width: '48px', 
-              height: '48px', 
-              borderRadius: '50%', 
-              background: 'var(--accent-secondary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontWeight: 'bold',
-              fontSize: '1.25rem'
-            }}>
-              {article.author.charAt(0)}
-            </div>
-            <div>
-              <div style={{ fontWeight: 600 }}>{article.author}</div>
-              <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                Fondateur & Directeur de Sentinelle Pulse
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '50%',
+                background: 'var(--accent-secondary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                fontSize: '1rem'
+              }}>
+                {article.author.split(' ').map(n => n[0]).join('')}
+              </div>
+              <div>
+                <div style={{ fontWeight: 600 }}>{article.author}</div>
+                <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
+                  Fondateur &amp; Directeur
+                </div>
               </div>
             </div>
+            <ShareButtons title={article.title} url={`/article/${article.id}`} />
           </div>
           
+          <ContentRenderer content={article.content} />
+          
           {relatedArticles.length > 0 && (
-            <div style={{ marginTop: '64px', paddingTop: '32px', borderTop: '1px solid var(--border)' }}>
-              <h3 style={{ marginBottom: '24px' }}>Articles liés</h3>
+            <div style={{ marginTop: '64px', paddingTop: '48px', borderTop: '3px solid var(--accent-primary)' }}>
+              <h3 style={{ marginBottom: '24px', fontSize: '1.25rem' }}>Articles liés</h3>
               <div style={{ 
                 display: 'grid', 
-                gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-                gap: '24px'
+                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gap: '20px'
               }}>
                 {relatedArticles.map(related => (
                   <Link 
                     key={related.id} 
                     href={`/article/${related.id}`}
                     style={{ 
-                      display: 'block',
-                      padding: '16px',
+                      textDecoration: 'none',
+                      color: 'inherit'
+                    }}
+                  >
+                    <div style={{
                       background: 'var(--surface)',
                       borderRadius: '12px',
+                      overflow: 'hidden',
                       border: '1px solid var(--border)',
                       transition: 'transform var(--transition), box-shadow var(--transition)'
-                    }}
-                    className="card-hover"
-                  >
-                    <span style={{ 
-                      fontSize: '0.75rem',
-                      textTransform: 'uppercase',
-                      color: categoryColors[related.category],
-                      fontWeight: 600
                     }}>
-                      {categories.find(c => c.id === related.category)?.name}
-                    </span>
-                    <h4 style={{ 
-                      fontSize: '1rem', 
-                      marginTop: '8px',
-                      display: '-webkit-box',
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden'
-                    }}>
-                      {related.title}
-                    </h4>
+                      <div style={{ height: '120px', overflow: 'hidden' }}>
+                        <img 
+                          src={related.image} 
+                          alt={related.title}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                      </div>
+                      <div style={{ padding: '16px' }}>
+                        <span style={{ 
+                          fontSize: '0.6875rem',
+                          textTransform: 'uppercase',
+                          color: categoryColors[related.category],
+                          fontWeight: 600
+                        }}>
+                          {categories.find(c => c.id === related.category)?.name}
+                        </span>
+                        <h4 style={{ 
+                          fontSize: '0.9375rem', 
+                          marginTop: '8px',
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden'
+                        }}>
+                          {related.title}
+                        </h4>
+                      </div>
+                    </div>
                   </Link>
                 ))}
               </div>
