@@ -4,7 +4,7 @@ import { articles, categories } from '@/lib/data';
 export const siteConfig = {
   name: 'Sentinelle Pulse',
   description: 'Votre source d\'information sur l\'économie, la géopolitique, la défense et l\'OSINT. Analyses approfondies et actualité en temps réel.',
-  url: 'https://sentinellepulse.com',
+  url: 'https://sentinelle-pulse.vercel.app',
   ogImage: '/og-image.jpg',
 };
 
