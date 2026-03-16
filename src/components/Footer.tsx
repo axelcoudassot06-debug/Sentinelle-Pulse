@@ -45,7 +45,7 @@ export default function Footer() {
           <div>
             <h4 className={styles.footerTitle}>À propos</h4>
             <p className={styles.footerDesc} style={{ fontSize: '0.875rem' }}>
-              <strong>Axel Coudassot-Berduou</strong> — Fondateur &amp; Directeur<br />
+              <strong>Axel Coudassot-Berducou</strong> — Fondateur &amp; Directeur<br />
               Analyste indépendant spécialisé dans les enjeux stratégiques.
             </p>
           </div>

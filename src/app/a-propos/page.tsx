@@ -3,7 +3,7 @@ import { siteConfig } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'À propos | Sentinelle Pulse',
-  description: 'Découvrez Sentinelle Pulse, votre source d\'analyse stratégique sur l\'économie, la géopolitique, la défense et l\'OSINT. Fondé par Axel Coudassot-Berduou.',
+  description: 'Découvrez Sentinelle Pulse, votre source d\'analyse stratégique sur l\'économie, la géopolitique, la défense et l\'OSINT. Fondé par Axel Coudassot-Berducou.',
   alternates: {
     canonical: `${siteConfig.url}/a-propos`,
   },
@@ -54,7 +54,7 @@ export default function AboutPage() {
             AC
           </div>
           <div style={{ flex: 1, minWidth: '200px' }}>
-            <h3 style={{ marginBottom: '8px' }}>Axel Coudassot-Berduou</h3>
+            <h3 style={{ marginBottom: '8px' }}>Axel Coudassot-Berducou</h3>
             <p style={{ 
               color: 'var(--accent-primary)', 
               fontWeight: 600, 
