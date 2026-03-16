@@ -35,7 +35,7 @@ export const articles: Article[] = [
     "author": "Axel Coudassot-Berducou",
     "date": "2026-03-16",
     "readTime": 14,
-    "image": "https://images.unsplash.com/photo-1518176258769-f227c798150e?w=800&q=80",
+    "image": "https://images.unsplash.com/photo-1518173946687-a4c036bc5c20?w=800&q=80",
     "featured": true,
     "trending": true
   },
