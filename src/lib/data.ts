@@ -194,6 +194,97 @@ export const articles: Article[] = [
     "image": "https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=1200&q=80",
     "featured": false,
     "trending": false
+  },
+  {
+    "id": "15",
+    "title": "Ukraine: 4 ans de guerre - Le bilan",
+    "excerpt": "■ Bilan capacitaire — 4 ans",
+    "content": "■ Bilan capacitaire — 4 ans\n\n1. La comptabilité de la guerre d'usure : pertes matérielles et humaines\n\nLa base de données Oryx — qui documente les pertes matérielles visuellement confirmées — constitue la référence la plus fiable pour évaluer le bilan matériel du conflit. Au 10 mars 2026, Oryx recense plus de 3 400 chars russes détruits, endommagés ou capturés, et environ 1 100 chars ukrainiens. Les pertes en véhicules blindés de transport et d'artillerie sont proportionnellement encore plus lourdes côté russe. Mais ces pertes ne racontent qu'une partie de l'histoire : la Russie a démontré une capacité de régénération industrielle et humaine qui a surpris les analyticiens occidentaux.\n\n■ La ligne de front — mars 2026\n\n2. Situation sur le terrain : une guerre d'usure qui grignote\n\nLa ligne de front en mars 2026 s'étend sur environ 1 000 kilomètres, de la région de Soumy au nord jusqu'à Kherson au sud. Les combats les plus intenses se concentrent dans trois secteurs : Pokrovsk (est — Donetsk), où la Russie contrôle désormais la majeure partie de la ville après une avancée record de 297 mètres par jour entre novembre 2025 et janvier 2026 ; Tchassiv Iar (ouest de Bakhmout), partiellement sous contrôle russe depuis l'été 2025 ; et Soumy au nord, où la Russie maintient une pression constante.\n\n■ Le dilemme démographique\n\n3. La bataille des effectifs : qui peut tenir le plus longtemps ?\n\nLe facteur le plus déterminant à moyen terme n'est pas matériel — c'est humain. L'Ukraine, avec une population de 35 millions (réduite par les déplacés), mobilise environ 800 000 soldats. Le recrutement est difficile, la mobilisation impopulaire, et les réservistes disponibles estimés à 200 000 à 300 000 en 2026. La Russie, avec 145 millions d'habitants et des millions de réservistes encore disponibles, dispose d'un avantage démographique structurel — malgré 1,2 million de pertes cumulées.\n\nSyrsky, commandant en chef ukrainien, a déclaré début 2026 que les pertes russes en 2025 avaient pour",
+    "category": "defense",
+    "author": "Axel Coudassot-Berducou",
+    "date": "2026-03-16",
+    "readTime": 8,
+    "image": "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=1200&q=80",
+    "featured": false,
+    "trending": false
+  },
+  {
+    "id": "16",
+    "title": "Taiwan 2026: Le compte à rebours",
+    "excerpt": "■ La coercition graduée",
+    "content": "■ La coercition graduée\n\n1. La stratégie chinoise : de la coercition au blocus — la montée en pression\n\nL'exercice du 29 décembre 2025 n'est pas un incident isolé — c'est l'étape la plus récente d'une escalade méthodique. La PLA a conduit des exercices de grande ampleur en août 2022 (après la visite de Pelosi), mai 2024 (investiture de Lai Ching-te), et maintenant décembre 2025 (Suite à une vente d'armes américaines de 11,1 milliards de dollars). Chaque épisode est plus élaboré que le précédent, ciblant des scénarios spécifiques : blocus des ports, frappes de précision sur infrastructures navales, projection amphibie.\n\nL'IFRI (Marc Julienne) décrit une stratégie en trois phases potentielles : actions hybrides crescendo (désinformation, cyberattaques, sabotages), blocus naval et aérien, et ultimement assaut amphibie. Ces phases ne s'excluent pas — elles se complètent. Le Pentagone estime une invasion amphibie encore complexe à court terme : manque de ravitailleurs en vol pour la zone d'exclusion aérienne, déficits en lutte anti-sous-marine, logistique amphibie insuffisante. Mais ces lacunes se comblent méthodiquement.\n\n■ La défense asymétrique taïwanaise\n\n2. La stratégie du porc-épic : rendre l'invasion trop coûteuse\n\nFace à l'impossibilité de rivaliser symétriquement avec la PLA, Taïwan mise sur une stratégie asymétrique — la 'stratégie du porc-épic' — conçue pour infliger des pertes si élevées à une force d'invasion qu'elle est dissuadée avant même de débarquer. Le budget spécial de 40 milliards de dollars proposé pour 2026–2033 finance trois piliers : le Dôme taïwanais (réseau antimissile et anti-drones multicouche IA), les drones (200 000 aériens + 1 000 navires de surface sans équipage), et les forces de réserve renforcées pour une résistance urbaine de type ukrainien.\n\n■ L'enjeu économique mondial\n\n3. TSMC et le choc économique mondial d'un blocus taïwanais\n\nLe risque taïwanais n'est pas seulement géopolitique — c'est le risque économique systémique le plus é",
+    "category": "geopolitique",
+    "author": "Axel Coudassot-Berducou",
+    "date": "2026-03-16",
+    "readTime": 8,
+    "image": "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?w=1200&q=80",
+    "featured": false,
+    "trending": false
+  },
+  {
+    "id": "17",
+    "title": "Mer Rouge: Les Houthis face au monde",
+    "excerpt": "■ Les Houthis — acteur non-étatique stratégique",
+    "content": "■ Les Houthis — acteur non-étatique stratégique\n\n1. Les Houthis : comment un mouvement tribal est devenu une puissance maritime\n\nLes Houthis (Ansar Allah) ont démontré depuis 2023 une capacité opérationnelle maritime que peu d'analystes leur prêtaient. Leur arsenal inclut des missiles balistiques antinavires (Tankil — dérivés du Jaxim iranien), des missiles de croisière (Quds-3), des drones kamikazes (Samad-3, Shahid-136 type), et des drones navals (USV) capables de cibler des navires à plusieurs centaines de kilomètres. Cet arsenal est principalement fourni et entretenu par l'Iran, avec des composants provenants de Chine et de Corée du Nord pour les systèmes électroniques.\n\n■ EUNAVFOR Aspides\n\n2. La réponse européenne : EUNAVFOR Aspides entre ambition et limites\n\nLa mission EUNAVFOR Aspides, déployée en mars 2024 avec 23 États membres participants, constitue la première opération navale européenne de protection maritime en mer Rouge depuis des décennies. Sa mission est strictement défensive : escorter les navires commerciaux, intercepter les missiles et drones en approche, sans mandat pour frapper les bases Houthies au Yémen. Cette limitation est à la fois une force (elle évite l'escalade directe) et une faiblesse (elle ne s'attaque pas à la cause du problème).\n\nLa France, en tant que puissance navale principale de l'opération, contribue avec des frégates multimissions (FREMM) et participe à la coordination du commandement. La Marine nationale a intercepté plusieurs missiles et drones Houthis lors de ses déploiements. L'opération a permis de sécuriser le transit d'environ 4 000 navires commerciaux, mais n'a pas résolu la crise fondamentale.\n\n■ Cartographie & Actions\n\n3. Cartographie actionnable",
+    "category": "geopolitique",
+    "author": "Axel Coudassot-Berducou",
+    "date": "2026-03-16",
+    "readTime": 7,
+    "image": "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=1200&q=80",
+    "featured": false,
+    "trending": false
+  },
+  {
+    "id": "18",
+    "title": "Guerre Sous-Marine: Le nouveau champ de bataille",
+    "excerpt": "■ La vulnérabilité des câbles sous-marins",
+    "content": "■ La vulnérabilité des câbles sous-marins\n\n1. Les câbles sous-marins : l'infrastructure la plus critique et la moins protégée du monde\n\nLe monde numérique repose sur 400 câbles sous-marins qui transportent 95 % du trafic internet international et la quasi-totalité des transactions financières mondiales. Ces câbles — filiforme de quelques centimètres de diamètre, posés à des profondeurs allant jusqu'à 8 000 mètres — sont étonnamment vulnérables. La plupart ne sont protégés par aucune armure significative en eau profonde. Deux ou trois points de rupture concentrés peuvent isoler un continent entier.\n\n■ Les SNLE et la dissuasion\n\n2. Les sous-marins nucléaires : la dissuasion ultime reste sous-marine\n\nLes SNLE (Sous-marins Nucléaires Lanceurs d'Engins) constituent la composante la plus survivable de la dissuasion nucléaire — indétectables, ininterceptables, capables de frapper n'importe quel point du globe depuis leur patrouille. La France opère 4 SNLE classe Le Triomphant (missiles M51) en permanence — au moins un en patrouille en tout temps. Les États-Unis maintiennent 14 SSBN (4 déployés en permanence). La Russie opère 12 SNLE (classes Borei et Delta IV) depuis Mourmansk. La Chine accélère avec ses Type 094 et le futur Type 096 (SLBM JL-3).\n\n2.1 Les XLUUV — la prochaine révolution des profondeurs\n\nLes Extra-Large Unmanned Underwater Vehicles (XLUUV) représentent la prochaine rupture stratégique sous-marine. Ces drones sous-marins autonomes — capables de patrouiller des semaines sans équipage, transportant des charges utiles de plusieurs tonnes (torpilles, mines, capteurs) — vont transformer la compétition sous-marine. Le Boeing Orca (US Navy) a été testé en 2024. L'Extra Large Autonomous Undersea Vehicle (XAUV) russe Poseidon (drone nucléaire — capacité torpille de 100 mégatonnes) est en développement avancé. La Chine développe ses propres XLUUV pour la guerre des fonds marins en Pacifique occidental.\n\n■ Cartographie & Actions\n\n3. Cartographie actionnable",
+    "category": "defense",
+    "author": "Axel Coudassot-Berducou",
+    "date": "2026-03-16",
+    "readTime": 8,
+    "image": "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=1200&q=80",
+    "featured": false,
+    "trending": false
+  },
+  {
+    "id": "19",
+    "title": "Chars de Combat: Le retour du roi",
+    "excerpt": "■ Les leçons d'Ukraine",
+    "content": "■ Les leçons d'Ukraine\n\n1. Ukraine : le char ni mort ni roi — mais transformé\n\nLa guerre en Ukraine a produit des leçons contradictoires sur le char de combat. Dans les premières semaines, des vidéos de chars russes détruits par des drones FPV à 300 dollars ont circulé mondialement, alimentant la thèse de l'obsolescence. Mais l'analyse plus fine du conflit révèle une réalité plus nuancée : les chars qui ont échoué sont ceux utilisés seuls, sans coordination interarmes, sans protection anti-drone, sans appui infanterie. Les chars intégrés dans des unités combinées (chars + infanterie + génie + défense anti-drone) continuent de jouer un rôle décisif.\n\n■ MGCS et le char du futur\n\n2. MGCS : le char franco-allemand en crise\n\nLe Main Ground Combat System (MGCS) est le programme de char de combat de 6e génération destiné à remplacer le Leclerc (France) et le Leopard 2 (Allemagne) à l'horizon 2035–2040. Porté par KNDS (la fusion Nexter + KMW), il illustre à la fois les ambitions de l'autonomie stratégique européenne et ses difficultés d'exécution. Le programme est en crise depuis 2022 : désaccords entre Nexter et Rheinmetall sur le leadership industriel, tensions franco-allemandes sur le partage des travaux, et questions sur la pertinence d'un char très lourd dans le contexte de la guerre des drones.\n\n■ Cartographie & Actions\n\n3. Cartographie actionnable",
+    "category": "defense",
+    "author": "Axel Coudassot-Berducou",
+    "date": "2026-03-16",
+    "readTime": 7,
+    "image": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=1200&q=80",
+    "featured": false,
+    "trending": false
+  },
+  {
+    "id": "20",
+    "title": "Artillerie & Munitions: La crise silencieuse",
+    "excerpt": "■ La révolution artillerie",
+    "content": "■ La révolution artillerie\n\n1. Ukraine : l'artillerie longue portée redevient décisive\n\nLa guerre en Ukraine a confirmé ce que les guerres du Golfe et d'Afghanistan avaient temporairement masqué : contre un adversaire disposant d'une défense antiaérienne robuste, l'aviation ne peut pas opérer librement. L'artillerie longue portée — moins vulnérable aux systèmes antiaériens, capable de frapper à 30–80 km avec précision — redevient l'arme de choix pour les frappes en profondeur. Le HIMARS (High Mobility Artillery Rocket System) américain a démontré une capacité de frappe de précision à 80 km avec les roquettes GMLRS, et à 300 km avec les missiles ATACMS.\n\n■ La crise des munitions 155 mm\n\n2. La grande pénurie : l'Europe ne produit pas assez\n\nLa révélation la plus brutale de la guerre en Ukraine pour les États européens est la suivante : après trente ans de dividende de la paix, l'Europe est incapable de produire les munitions en quantité suffisante pour soutenir un conflit de haute intensité. En 2022, l'Europe produisait 700 000 obus de 155 mm par an — soit environ 4 jours de consommation ukrainienne lors des phases intenses. L'objectif ambitieux de 2 millions d'ici fin 2025 n'a pas été atteint : les estimations convergent vers 1,1 à 1,3 million, révélant les goulots structurels de l'industrie des munitions.\n\n■ Cartographie & Actions\n\n3. Cartographie actionnable",
+    "category": "defense",
+    "author": "Axel Coudassot-Berducou",
+    "date": "2026-03-16",
+    "readTime": 7,
+    "image": "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=1200&q=80",
+    "featured": false,
+    "trending": false
+  },
+  {
+    "id": "21",
+    "title": "Guerre Électronique: Le champ de bataille invisible",
+    "excerpt": "■ La guerre invisible",
+    "content": "■ La guerre invisible\n\n1. Le spectre électromagnétique comme champ de bataille\n\nLa guerre électronique se divise en trois composantes. L'attaque électronique (EA) : perturber, brouiller ou détruire les systèmes électroniques adverses — radars, communications, GPS, guidage des armes. La protection électronique (EP) : protéger ses propres systèmes contre ces attaques. Le soutien électronique (ES) : détecter, identifier et localiser les émissions électromagnétiques adverses pour les renseignements. En Ukraine, ces trois dimensions sont en jeu simultanément, créant un environnement électromagnétique d'une complexité sans précédent depuis la Guerre froide.\n\n■ Cartographie & Actions\n\n2. Cartographie actionnable",
+    "category": "defense",
+    "author": "Axel Coudassot-Berducou",
+    "date": "2026-03-16",
+    "readTime": 6,
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+    "featured": false,
+    "trending": false
   }
 ];
 
