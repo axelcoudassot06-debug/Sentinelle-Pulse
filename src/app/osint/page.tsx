@@ -1,5 +1,6 @@
 import { getArticlesByCategory, categories } from '@/lib/data';
 import ArticleCard from '@/components/ArticleCard';
+import { siteConfig } from '@/lib/seo';
 
 const categoryId = 'osint';
 const cat = categories.find(c => c.id === categoryId)!;
@@ -11,7 +12,10 @@ export function generateStaticParams() {
 export async function generateMetadata() {
   return {
     title: `${cat.name} | Sentinelle Pulse`,
-    description: `Articles sur l'actualité ${cat.name.toLowerCase()}`,
+    description: `Articles sur l'actualité ${cat.name.toLowerCase()}. Analyses approfondies et actualité en temps réel sur ${cat.name.toLowerCase()}.`,
+    alternates: {
+      canonical: `${siteConfig.url}/${categoryId}`,
+    },
   };
 }
 

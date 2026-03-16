@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Calendar, Clock, ArrowLeft, Share2, Bookmark } from 'lucide-react';
 import Link from 'next/link';
 import ClientArticleWrapper from './ClientArticleWrapper';
-import { generateArticleSchema } from '@/lib/seo';
+import { generateArticleSchema, siteConfig } from '@/lib/seo';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -38,6 +38,9 @@ export async function generateMetadata({ params }: PageProps) {
       description: article.excerpt,
       images: [article.image],
     },
+    alternates: {
+      canonical: `${siteConfig.url}/article/${article.id}`,
+    },
   };
 }
 
@@ -60,6 +63,31 @@ export default async function ArticlePage({ params }: PageProps) {
   const color = categoryColors[article.category];
   const articleSchema = generateArticleSchema(article);
   
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Accueil',
+        item: siteConfig.url,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: category?.name || '',
+        item: `${siteConfig.url}/${article.category}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: article.title,
+        item: `${siteConfig.url}/article/${article.id}`,
+      },
+    ],
+  };
+  
   const relatedArticles = articles
     .filter(a => a.category === article.category && a.id !== article.id)
     .slice(0, 3);
@@ -76,6 +104,10 @@ export default async function ArticlePage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       
       <article>

@@ -76,21 +76,30 @@ export function generateArticleSchema(article: typeof articles[0]) {
     image: article.image,
     datePublished: article.date,
     dateModified: article.date,
+    articleSection: article.category,
+    wordCount: article.content.split(/\s+/).length,
     author: {
       '@type': 'Person',
       name: article.author,
+      url: siteConfig.url,
     },
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteConfig.url}/logo.png`,
+        url: `${siteConfig.url}/logo.svg`,
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${siteConfig.url}/article/${article.id}`,
+    },
+    inLanguage: 'fr-FR',
+    isAccessibleForFree: true,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.article-content'],
     },
   };
 }
