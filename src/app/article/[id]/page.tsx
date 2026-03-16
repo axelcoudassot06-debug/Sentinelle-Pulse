@@ -7,6 +7,7 @@ import { generateArticleSchema, siteConfig } from '@/lib/seo';
 import ShareButtons from '@/components/ShareButtons';
 import CommentsSection from '@/components/CommentsSection';
 import { getCommentsByArticleId } from '@/lib/comments';
+import React from 'react';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -55,120 +56,78 @@ const categoryColors: Record<string, string> = {
 };
 
 function ContentRenderer({ content }: { content: string }) {
-  const paragraphs = content.split('\n\n').filter(p => p.trim());
+  const lines = content.split('\n');
+  const elements: React.ReactNode[] = [];
+  let key = 0;
   
-  return (
-    <div style={{ 
-      fontSize: '1.125rem', 
-      lineHeight: 1.85,
-      color: 'var(--text-primary)'
-    }}>
-      {paragraphs.map((para, index) => {
-        const trimmed = para.trim();
-        
-        if (trimmed.startsWith('■ ')) {
-          const title = trimmed.substring(2).trim();
-          return (
-            <div key={index} style={{ marginTop: '48px', marginBottom: '24px' }}>
-              <h2 style={{ 
-                fontSize: '1.625rem', 
-                fontWeight: 700,
-                color: 'var(--text-primary)',
-                marginBottom: '16px',
-                paddingBottom: '12px',
-                borderBottom: '2px solid var(--accent-primary)'
-              }}>
-                {title}
-              </h2>
-            </div>
-          );
-        }
-        
-        if (trimmed.match(/^\d+\.\s+/) || trimmed.match(/^\d+\.\d+\s+/)) {
-          const lines = trimmed.split('\n');
-          return (
-            <div key={index} style={{ marginBottom: '24px' }}>
-              {lines.map((line, lineIdx) => {
-                if (line.match(/^\d+\.\s+[^a-z]/) && !line.match(/\d+\.\d+/)) {
-                  return (
-                    <h3 key={lineIdx} style={{ 
-                      fontSize: '1.25rem', 
-                      fontWeight: 600, 
-                      marginTop: '24px',
-                      marginBottom: '12px',
-                      color: 'var(--text-primary)'
-                    }}>
-                      {line.replace(/^\d+\.\s+/, '')}
-                    </h3>
-                  );
-                }
-                if (line.match(/^\d+\.\d+\s+/)) {
-                  return (
-                    <p key={lineIdx} style={{ 
-                      marginBottom: '8px',
-                      paddingLeft: '20px',
-                      color: 'var(--text-secondary)'
-                    }}>
-                      {line}
-                    </p>
-                  );
-                }
-                return (
-                  <p key={lineIdx} style={{ marginBottom: '16px' }}>
-                    {line}
-                  </p>
-                );
-              })}
-            </div>
-          );
-        }
-        
-        if (trimmed.startsWith('- ') || trimmed.startsWith('• ')) {
-          const items = trimmed.split('\n').filter(l => l.trim());
-          return (
-            <ul key={index} style={{ 
-              marginBottom: '24px', 
-              paddingLeft: '24px',
-              marginTop: '16px'
-            }}>
-              {items.map((item, i) => (
-                <li key={i} style={{ 
-                  marginBottom: '10px',
-                  color: 'var(--text-secondary)'
-                }}>
-                  {item.replace(/^[‑•]\s*/, '')}
-                </li>
-              ))}
-            </ul>
-          );
-        }
-        
-        if (trimmed.match(/^[A-Z]{2,}.*[A-Z]{2,}/) && trimmed.length < 100) {
-          return null;
-        }
-        
-        if (trimmed.match(/^[+\-]?\d+[%]?/) && trimmed.length < 80) {
-          return (
-            <div key={index} style={{ 
-              marginBottom: '24px',
-              padding: '16px 20px',
-              background: 'var(--surface)',
-              borderRadius: '8px',
-              borderLeft: '4px solid var(--accent-primary)'
-            }}>
-              <span style={{ fontWeight: 600, fontSize: '1.25rem' }}>{trimmed}</span>
-            </div>
-          );
-        }
-        
-        return (
-          <p key={index} style={{ marginBottom: '20px' }}>
-            {trimmed}
-          </p>
-        );
-      })}
-    </div>
-  );
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    
+    // Section header (##)
+    if (line.startsWith('## ')) {
+      elements.push(
+        <div key={key++} style={{ marginTop: '48px', marginBottom: '20px' }}>
+          <h2 style={{ 
+            fontSize: '1.75rem', 
+            fontWeight: 700,
+            color: 'var(--text-primary)',
+            marginBottom: '16px',
+            paddingBottom: '12px',
+            borderBottom: '2px solid var(--accent-primary)'
+          }}>
+            {line.replace('## ', '')}
+          </h2>
+        </div>
+      );
+      continue;
+    }
+    
+    // Subsection (###)
+    if (line.startsWith('### ')) {
+      elements.push(
+        <h3 key={key++} style={{ 
+          fontSize: '1.35rem', 
+          fontWeight: 600, 
+          marginTop: '32px',
+          marginBottom: '16px',
+          color: 'var(--text-primary)'
+        }}>
+          {line.replace('### ', '')}
+        </h3>
+      );
+      continue;
+    }
+    
+    // Sub-subsection (####)
+    if (line.startsWith('#### ')) {
+      elements.push(
+        <h4 key={key++} style={{ 
+          fontSize: '1.15rem', 
+          fontWeight: 600, 
+          marginTop: '24px',
+          marginBottom: '12px',
+          color: 'var(--text-secondary)'
+        }}>
+          {line.replace('#### ', '')}
+        </h4>
+      );
+      continue;
+    }
+    
+    // Regular paragraph
+    elements.push(
+      <p key={key++} style={{ 
+        marginBottom: '20px', 
+        lineHeight: 1.85,
+        color: 'var(--text-primary)'
+      }}>
+        {line}
+      </p>
+    );
+  }
+  
+  return <div style={{ fontSize: '1.125rem' }}>{elements}</div>;
 }
 
 export default async function ArticlePage({ params }: PageProps) {
