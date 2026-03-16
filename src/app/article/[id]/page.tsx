@@ -1,9 +1,11 @@
 import { getArticleById, articles, categories } from '@/lib/data';
 import { notFound } from 'next/navigation';
-import { Calendar, Clock, ArrowLeft, Share2, Bookmark } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import ClientArticleWrapper from './ClientArticleWrapper';
 import { generateArticleSchema, siteConfig } from '@/lib/seo';
+import ShareButtons from '@/components/ShareButtons';
+import Giscus from '@/components/Giscus';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -178,28 +180,7 @@ export default async function ArticlePage({ params }: PageProps) {
               Par <strong style={{ color: 'var(--text-primary)' }}>{article.author}</strong>
             </span>
             <div style={{ marginLeft: 'auto', display: 'flex', gap: '12px' }}>
-              <button style={{ 
-                background: 'none', 
-                border: 'none', 
-                cursor: 'pointer',
-                color: 'var(--text-secondary)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}>
-                <Share2 size={16} />
-              </button>
-              <button style={{ 
-                background: 'none', 
-                border: 'none', 
-                cursor: 'pointer',
-                color: 'var(--text-secondary)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}>
-                <Bookmark size={16} />
-              </button>
+              <ShareButtons title={article.title} url={`/article/${article.id}`} />
             </div>
           </div>
         </div>
@@ -309,6 +290,13 @@ export default async function ArticlePage({ params }: PageProps) {
               </div>
             </div>
           )}
+          
+          <Giscus 
+            repo="axelcoudassot06-debug/Sentinelle-Pulse"
+            repoId="R_placeholder"
+            category="Comments"
+            categoryId="DIC_placeholder"
+          />
         </div>
       </article>
     </>

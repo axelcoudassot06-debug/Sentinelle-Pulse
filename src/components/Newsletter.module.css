@@ -69,6 +69,21 @@
   border-radius: 8px;
 }
 
+.error {
+  color: #DC2626;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 12px;
+  background: #DC262620;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 @media (max-width: 640px) {
   .newsletter {
     padding: 20px;

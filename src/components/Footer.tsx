@@ -35,6 +35,7 @@ export default function Footer() {
           <div>
             <h4 className={styles.footerTitle}>Légal</h4>
             <div className={styles.footerLinks}>
+              <Link href="/a-propos" className={styles.footerLink}>À propos</Link>
               <Link href="/mentions-legales" className={styles.footerLink}>Mentions légales</Link>
               <Link href="/confidentialite" className={styles.footerLink}>Confidentialité</Link>
               <Link href="/contact" className={styles.footerLink}>Contact</Link>
