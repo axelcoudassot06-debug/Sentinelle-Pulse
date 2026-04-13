@@ -73,7 +73,7 @@ export function generateArticleSchema(article: typeof articles[0]) {
     '@type': 'NewsArticle',
     headline: article.title,
     description: article.excerpt,
-    image: article.image,
+    image: `${siteConfig.url}/logo.png`,
     datePublished: article.date,
     dateModified: article.date,
     articleSection: article.category,

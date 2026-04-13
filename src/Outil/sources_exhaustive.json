@@ -1,0 +1,379 @@
+{
+  "telegram": {
+    "sudan": {
+      "rsf": ["RSFSudan", "RapidSupportFC", "HemetiOfficial", "RSFMEDIAOFFICIAL"],
+      "military_saf": ["SudanArmedForces", "SAFNews", "KhartoumLive", "SAFSpokesperson"],
+      "darfur": ["AlFasherNow", "ElFasherLive", "GeninaNews", "DarfurWitness", "Darfur24", "WestDarfur", "CentralDarfur", "SouthDarfur", "NorthDarfur"],
+      "khartoum": ["KhartoumUpdates", "OmdurmanLive", "BahriCity", "SudanCapital"],
+      "kordofan": ["KordofanNews", "SouthKordofan", "NorthKordofan", "WestKordofan"],
+      "blue_nile": ["BlueNileSudan", "DamazinUpdates"],
+      "gesirek": ["GedarifState", "GesirekNews"],
+      " Kassala": ["KassalaState", " KassalaNews"],
+      "red_sea": ["PortSudan", "RedSeaSudan", "SawakinPort"],
+      "white_nile": ["WhiteNileSudan", "KostiCity"],
+      "sennar": ["SennarState", "SennarNews"],
+      "gadarif": ["GadarifState", "GadarifNews"],
+      "sinner": ["SinnerState", "SinnerNews"],
+      "nile_state": ["NileStateSudan", "DongolaCity"],
+      "northern": ["NorthernSudan", "DongolaNews"],
+      "osint": ["SudanLive", "SudanWarMap", "SudanWarMonitor", "SudanConflict", "SudanBreaking", "SudanTribune", "SudanHourly", "DarfourHourly", "SudanAkhbar", "ConflictMonitorSD", "WarAlertSudan", "AfricaConflictWatch", "ASLSudan"],
+      "witness": ["SudanEyewitness", "KhartoumWitness", "DarfurWitness", "SudanWitness", " eyewitnessSD"],
+      "arabic_news": ["SudanNews24", "AlIntibaha", "AlMushahada", "AlTayyarSudan", "AlRay", "SunaSudan", "AlSharqAlAwsatSudan"],
+      "international": ["SudanObserver", "SudanTV", "AlHadathSudan"],
+      "humanitarian": ["SudanAid", "OCHA_Sudan", "UNHCRSudan", "MSFSudan", "ICRCSudan", "ReliefWebSudan"],
+      "militaires": ["SDAArmy", "SUDAN_FF", "ForcesArmeesSD"]
+    },
+    "gaza": {
+      "hamas": ["qassam12", "AlQassamBrigades", "AqsaTV", "AlQassamMedia", "PalestineToday", "HamasPS"],
+      "pij": ["SarayaAlQuds", "AlQudsBrigades", "PIJNews"],
+      "hezbollah": ["Hezbollah1", "LebaneseHezbollah", "HezbollahCenter", "HezbollahNews", "AlmanarTV", "AlMayadeenNews"],
+      "houthi": ["AnsarAllahMedia", "AlMasirahTV", "HouthisNews", "YemenHouthis", "SabaNews", "AlThaqafahYemen"],
+      "eyewitness": ["GazaLive", "GazaBreaking", "RafahNow", "GazaEyewitness", "KhanYounisLive", "GazaCityLive", "NorthGazaLive", "DeirBalahLive", "GazaNowNews", "GazaWatch", "GazaPalestine", "PalestineOnline", "GazaOnline", "GazaMedia24"],
+      "palestinian": ["PalestineTV", "QudsN", "ShehabAgency", "Ma'anNews", "WafaNews", "AlResalah", "FilastinAlYawm", "PalestineChronicle", "PalestineNews", "PalestinePost"],
+      "israel_military": ["IDFSpokesperson", "AvichayAdraee", " Arabic IDF", "IDFNewsEN", "ILTweets", "IsraelHayom"],
+      "osint": ["PalestineOSINT", "GazaOSINT", "ConflictWatchPS", "WarOnPalestine", "FreePalestine", "SuppressedNws", "PalestineInsight", "PalestinianVoice", "GazaICU", "AlAhramGaza"],
+      "social": ["GazaFamily", "Gaza4Palestine", "FreeGaza", "PalestineDaily", "GazaUpdates", "RafahUpdates", "PalestineMM"],
+      "arab_media": ["AlJazeeraPalestine", "AlArabiyaPal", "SkyNewsArabiaPal", "BBCArabic", "France24Arabic", "DWArabic"],
+      "international": ["UNPalestine", "OCHAPalestine", "UNRWA", "ICRCMena", "MSFPalestine", "AmnestyIntlPS", "HRWPS"],
+      "lebanon": ["LebanonFiles", "LebanonNews24", "BeirutPost", "LBCI", "AlJoumhouria", "AnNaharLebanon"],
+      "israel": ["IsraelMFA", "IsraelPM", "Tel AvivPolice", "JerusalemPost", "TimesOfIsrael", "Haaretz"],
+      "iran": ["IRINN", "IRANPressTV", "FarsNews_Eng", "TehranTimes", "MizanNews"]
+    },
+    "ukraine": {
+      "russian_mo": ["mod_russia", "RussianArmy", "RybarLive", "ZArhiv", "MILITARY_RF", "RussiaArmy", "RFArmyNews", "VoyennayaKommendant", "RusVes"],
+      "russian_osint": ["rybar", "Wartranslated", "AndrewPerpetua", "UkraineWarTracker", "DeepStateUA", "GerasimenkoTF", "Meteprorock", "MilitaryManP", "TatarigamiUA", "wartranslator"],
+      "russian_wagner": ["PMC_Wagner", "WagnerGroupNews", "ConcordGroup"],
+      "russian_propaganda": ["Russia24", "RussiaToday", "RiaFan", "KomsomolskayaPravda", "RossiyskayaGazeta", "TVZvezda"],
+      "ukrainian_mo": ["ZSU_updates", "GeneralStaffUA", "UkrainianLandForces", "UkrainianAirForce", "UkrainianNavy", "Ukrainian TerritorialDefense", "UkrainianMilitaryNews", "AFUStrategicCommunications"],
+      "ukrainian_osint": ["WarMonitor3", "Liveuamap", "oryxspioenkop", "NOELreports", "Maks_NAFO_FELLA", "TheStudyofWar", "ISWResearch", "ForbesUA", "UkrainskaPravdaWar", "GordonUA"],
+      "ukrainian": ["UkrainskaPravda", "UNNUkraine", "UkrainianNews24", "InterfaxUA", "CensorNET", "UkrainianTruth", "LigaNews", "PravdaUA"],
+      "donbas": ["DonetskUpdate", "LPRUpdates", "DonetskInfo", "LuhanskInfo", "DPRNews", "LPRNews"],
+      "crimea": ["CrimeaUpdates", "CrimeaNot Crimea", "CrimeanInfo"],
+      "frontline": ["UkraineFrontline", "DonbasFront", "KharkivFront", "ZaporizhzhiaFront", "KhersonFront", "MyrhorodFront"],
+      "drone": ["UkraineDrones", "DroneForcesUA", "UAVNewsUA", "FPVUkraine", "DroneWarUA"],
+      "nato": ["NATO_OTAN", "NATONews", "US_European_CMD", "USEmbassyKyiv", "StateDept"],
+      "sanctions": ["SanctionsAgainstRussia", "RussiaSanctions", "EU_sanctions"],
+      "mercenaries": ["WagnerGroup", "LegionFreedomUA", "InternationalLegionUA", "GeorgianLegionUA", "KhorneGroup"],
+      "belarus": ["BelarusMIG", "BelarusianGA", "BelarusFeed", "BelarusMFA"],
+      "international": ["OSINTinfra", "UkraineWarMap", "Confirmdk", "NEXTALive", "AFPGraphics"]
+    },
+    "sahel": {
+      "mali_military": ["FAMaOfficial", "MaliActuLive", "BamakoLive", "EMA_ Mali", "ArmeeMali", "KoulouDaba"],
+      "mali_osint": ["MaliLive", "MaliInfo", "MaliConfluent", "SahelInfraMali", "NordMali", "TimbuktuLive"],
+      "jnim": ["JNIMMedia", "JNIMOfficiel", "KatibaMacina", "JNIMVideos", "AQIMofficial"],
+      "isgs": ["ISGSahel", "ISGMali", "ISGSahara"],
+      "jnim_isgs": ["JNIM_ISGS_News", "SahelExtremism", "MaliExtremism", "JihadistWatch Sahel"],
+      "burkina": ["BurkinaFasoLive", "VDPBurkina", "_armyBF", "BurkinaMilitary", "PutschNewsBF", "LIndpendantBF"],
+      "niger": ["NigerLiveNews", "NigerArmy", "ConseilNationalPourLaSauvegarde", "CNSP_Niger", "NigerMilitary"],
+      "chad": ["ChadArmy", "tchad_actu", "NDjamenaLive", "ChadMilitaryNews", "FACT_Niger", "TchadDebout"],
+      "mauritania": ["MauritaniaLive", "MauritaniaArmedForces", "NouakchottActu"],
+      "french_military": ["ArmeesFrance", "EMA_France", "OperationBarkhane", "ForcesArmeesG5Sahel", "MINUSMA"],
+      "russian_wagner_africa": ["WagnerGroupAfrica", "AfricaCorp", "PMC_Africa", "M_Chodorkovsky"],
+      "humanitarian": ["OCHA Sahel", "MSFSahel", "ICRCSahel", "UNDPAfrica", "IFRCAfrica"],
+      "g5_sahel": ["G5Sahel", "ForceConjointeG5S", "FCG5S"],
+      "uns": ["MINUSMA", "UNOWAS", "UNDPWestAfrica", "UNOWAS"]
+    },
+    "drc": {
+      "m23": ["M23RDC", "M23RDCNews", "AFC_M23", "M23Revolution", "CongoleseM23"],
+      "adf": ["ADFUpdates", "ADFMade", "ADFInfo", "AlliedDemocraticForces", "ADFNews"],
+      "wazalendo": ["WazalendoFD", "FDLRInfo", "WazalendoNews"],
+      "fardc": ["FARDC_Officiel", "ArmeeRDC", "RDCMilitary", "ForcesArmeesRDC", "FARDCUpdates"],
+      "monusco": ["MONUSCO", "UNPeacekeeping", "UNRDC", "UNCongo"],
+      "north_kivu": ["NordKivuLive", "GomaLive", "ButemboActu", "RutshuruLive", "MasisiLive", "NyiragongoLive"],
+      "ituri": ["IturiNews", "IturiLive", "BuniaActu", "IturiConf", "OrientaleProvince"],
+      "south_kivu": ["SudKivuLive", "UviracAc tu", "FiziNews", "SouthKivuInfo"],
+      "kasai": ["KasaiLive", "KanangaNews", "LuluaNews", "KasaiCentral"],
+      "kinshasa": ["KinshasaLive", "RDCJustice", "KinshasaInfo", "RDCPresidence"],
+      "osint": ["CongoLive", "RDCFront", "ConflictCongo", "KivuConflict", "AfricaGreatLakes", "KivuWatch", "DRCInsight"],
+      "mai_mai": ["MaiMaiGroups", "MaiMaiSheka", "MaiMaiCongo"],
+      "copperbelt": ["KatangaMining", "CopperbeltLive", "LubumbashiNews", "HautKatanga"],
+      "humanitarian": ["OCHARDC", "MSFDRC", "ICRCDRC", "UNHCRDRC"]
+    },
+    "myanmar": {
+      "junta": ["Myanmar_MOInformation", "mwd_ Myanma", "NaypyidawBoardcast", "MRTVWeb", "MyanmarAnnounces", "KATHAPathinya", "MOIUnionMinister"],
+      "junta_military": ["ThaiMyanmarBorder", "BamarArmy", "MyanmarMilitary", "SAC_CMIO"],
+      "resistance": ["NUG_DPR", "NUGForeignAffairs", "PDFMyanmar", "PeopleDefenseForce", "KNU1945", "KNDFNews", "ChinNationalFront"],
+      "arakan": ["AAHome", "ArakanArmy", "RakhineArakan", "ArakanNationalArmy", "AA_Information"],
+      "kachin": ["Kachin Independence Army", "KachinState", "MyanmarKachin", "KIA_News"],
+      "shan": ["ShanState", "SSPP_SSA", "ShanArmy", "Ta_angNational", "SNLDNews"],
+      "karen": ["KNUHQ2", "KarenNationalUnion", "KNU_Election", "KarenBridge"],
+      "chin": ["ChinNationalFront", "ChinHumanRights", "ChinLand"],
+      "chin_state": ["ChinStateMyanmar", "FalamTown", "HakhaNews"],
+      "osint": ["MyanmarNowNews", "IrrawaddyMyanmar", "MizzimaNews", "DemocraticVoiceBurma", "KhitThitMedia", "BNI_Frontier", "MyanmarOSINT", "ConflictPhotoMyanmar"],
+      "social": ["MyanmarWitness", "BurmaJam", "KachinWitness", "MandalayLive", "YangonL ive", "SagaingLive"],
+      "thailand": ["ThaiMyanmarBorder", "ThailandMFA", "ThaiArmyNews"],
+      "china": ["ChinaMyanmar", "MyanmarXinhua", "GlobalTimesMyanmar"],
+      "international": ["SpecialASEAN", "UNMyanmar", "ICJCMMyanmar", "HRWMyanmar", "AmnestyMyanmar"]
+    },
+    "yemen": {
+      "houthi": ["AnsarAllahMedia", "AlMasirahTV", "HouthisNews", "YemenHouthis", "SabaNews", "AlThaqafahYemen", "HouthiMediaCenter", "YemenPress"],
+      "houthis_military": ["HouthiForces", "HouthiArmy", "AnsarAllahArmy", "HouthiMissiles", "HouthiDrones"],
+      "yemeni_gov": ["YemenGovernment", "YemenPresidency", "YemenForeignMinistry", "AdenGovo", "STC_Yemen"],
+      "stc": ["STC Aden", "SouthernMovement", "SouthernTransitionalCouncil", "SouthernResistance"],
+      "islands": ["SocotraYemen", "PerimIsland", "HanishIslands"],
+      "saudi_coalition": ["Saudi Forces Yemen", "CoalitionSupport", "ArabCoalitionYemen", "SaudiMDF"],
+      "uae_involved": ["UAEYemen", "EmiratiForcesYemen", "HadramoutUAE"],
+      "aden": ["AdenNews", "AdenLive", "AdenCity", "YemenAden"],
+      "taiz": ["TaizUpdates", "TaizCity", "TaizBesieged"],
+      "marib": ["MaribOnline", "MaribLive", "MaribNews"],
+      "hodeidah": ["HodeidahLive", "HodeidahPort", "RedSeaYemen"],
+      "saada": ["SaadaNews", "SaadaYemen", "NorthYemen"],
+      "osint": ["YemenLive", "YemenConflict", "YemenWarMonitor", "YemenInsight", "YemenObserver", "YemenWarMap", "YemenAlert", "YemenCrisis"],
+      "social": ["YemenWitness", "YemenSOS", "Yemen4Change", "FreeYemen"],
+      "humanitarian": ["OCHAYemen", "MSFYemen", "ICRCYemen", "UN Yemen", "SamsYemen"],
+      "saudi": ["SaudiMFA", "SaudiGOV", "SPA_Saudi"],
+      "iran": ["IRAN_Yemen", "IranianYemeni", "TehranYemen"]
+    },
+    "haiti": {
+      "gangs": ["G9Family", "G9Kreyol", "JimmyCherizier", "GangsHaiti", "HaitiGangMap", "BrooklynTiGeorges"],
+      "police": ["HaitiPolice", "PNH_Haiti", "HaitiNationalPolice", "PolceHaiti"],
+      "ms13": ["MS13Haiti", "MaraSalvatrouchaHT", "MS13_updates"],
+      "400_mawozo": ["400Mawozo", "ChenMeSan", "HaitiKidnappers"],
+      "kraze_barye": ["KrazeBarye", "KreyolBarye", "HaitiBarye"],
+      "port_au_prince": ["PAPUpdates", "PortauPrinceLive", "CiteSoleilHaiti", "DelmasHaiti", "CarrefourHaiti"],
+      "cape_haitien": ["CapHaitienLive", "NordHaitiNews"],
+      "gonaives": ["GonaivesNews", "ArtiboniteHaiti"],
+      "osint": ["HaitiConflict", "HaitiWar", "HaitiCrisisWatch", "HaitiInsight", "HaitiChaos", "HaitiAlert"],
+      "social": ["HaitiWitness", "HaitiSOS", "FreeHaiti", "HaitiPeople"],
+      "international": ["BINUH", "UNHaiti", "MINUSTAH", "CoreGroupHaiti"],
+      "kenya": ["KenyaPoliceHaiti", "HaitiMissionKenya"],
+      "usa": ["USEmbassyHT", "USAIDHaiti", "USStateDeptHaiti"],
+      "dominican": ["RepublicaDominicana", "DR_Haiti", "DominicanBorder"]
+    },
+    "ethiopia": {
+      "tigray": ["TigrayWar", "TigrayUpdate", "TigrayConflict", "ENDFUpdates", "TigrayForces", "TDF_Official"],
+      "amhara": ["AmharaRegion", "AmharaFano", "FanoAmhara", "AmharaConflict"],
+      "oromia": ["OromiaNews", "OLF_Oromia", "OromoLiberation", "OromiaConflict"],
+      "somali_region": ["EthiopianSomali", "OgadenRegion", "ONLF_Official", "EthiopianSomaliRegion"],
+      "afar": ["AfarRegion", "AfarConflict"],
+      "gambela": ["GambelaRegion", "GambelaNews"],
+      "ethiopian_military": ["ENDF_Ethiopia", "EthiopiaArmy", "ArmedForcesET", "EthiopianDefense"],
+      "federal": ["EthiopiaGovernment", "EBCNews", "FanaBroadcast", "AddisStandard", "ENAUpdates"],
+      "eritrea": ["EritreaMFA", "EritreaForces", "EritreanArmy", "EritreaUpdates"],
+      "sudan_border": ["EthiopiaSudanBorder", "AlFashagaRegion"],
+      "humanitarian": ["OCHAEthiopia", "MSFEthiopia", "UNHCEthiopia"],
+      "osint": ["EthiopiaConflict", "HornAfricaWatch", "EthiopiaInsight", "EthiopiaMonitor", "AddisLive"]
+    },
+    "mexico": {
+      " cartels": ["CDN_Carteles", "LosZetas", "SinaloaCartel", "CJNG_Nacional", "GrupoJuridicoReynosa", "MRXM_Nuevaya", "GulfCartel", "KnightsTemplar", "LaFamiliaMichoacana"],
+      "cjf_ent": [" CJF_MTY", "LosZetasNews", "NortheastCartel", "NoresteCartel"],
+      "guadalajara": ["CartelJalisco", "JaliscoConf", "GuadalajaraMet"],
+      "mexico_city": ["CDMX_OAX", "CDMX_Puebla", "MexicoCitySeguridad"],
+      "sinaloa": ["SinaloaInform", "CuliacanNews", "MazatlanLive"],
+      "juarez": ["CiudadJuarez", "JuarezViolence", "ChihuahuaMty"],
+      "tijuana": ["TijuanaInforma", "BajaCaliforniaN", "CartelTijuana"],
+      "monterrey": ["MTYSeguridad", "NuevoLeonSeg", "MonterreyCarteles"],
+      "police": ["SSP_Mexico", "GN_Mexico", "Sedena_MX", "FGRMexico"],
+      "osint": ["MexicoWarZone", "CartelWars", "MexicoConflict", "NarcoticsMexico", "MexicoViolence"],
+      "social": ["MexicoWitness", "ViolenciaMexico", "FMRMexico"],
+      "texas_border": ["TexasBorder", "USBorderPatrol", "BorderReport"]
+    },
+    "colombia": {
+      "farc": ["FARC_EP", "FARC_Renovado", "FARC_Oficial", "AndreBocatAC"],
+      "eln": ["ELN_Vzla", "ELNColombiano", "ELN_Comando", "ComandoCentralELN"],
+      "clan": ["ClanGulfCartel", "GulfCartelCol", "ClanDelGolfo"],
+      "bacrim": ["BacrimColombia", "BandasCriminales"],
+      "disidencias": ["FARC_Disidencias", " SegundaMarquetalia", "FARC_RM_Oficial"],
+      "military": ["EjercitoColombia", "FFMMColombia", "PoliciaColombia", "FuerzasMilitarCo"],
+      "peace": ["JEP_Colombia", "MinJusticiaCo", "GobiernoColombia"],
+      "osint": ["ColombiaConflict", "FARCWatch", "ELNMonitor", "ColombiaInsight"],
+      "venezuela_border": ["ColombiaVenezuela", "FronteraVzla", "TachiraBorder"]
+    },
+    "philippines": {
+      "maoist": ["CPP_NPA", "CommunistPartYP", "NPA_Philippines", "NDFP_Oficial"],
+      "moro": ["MNLF_Oficial", "MILF_Oficial", "BangsamoroInfo", "MoroNationalFront"],
+      "isis_ph": ["ISISPhilippines", "ASG_Philippines", "AbuSayyafGroup", "MauteGroup"],
+      "military": ["ArmedForcesPH", "PhilippineArmy", "PhilippineNavy", "PhilippineAirForce", "PNPPhilippines"],
+      "marawi": ["MarawiUpdates", "LanaoConflict", "MindanaoWar"],
+      "sulu": ["SuluUpdates", "SuluConflict", "TawiTawiNews"],
+      "osint": ["PhilippinesConflict", "MindanaoWatch", "PHInsurgency", "PhilippinesOSINT"],
+      "china_sea": ["WestPhilippineSea", "PhilippineCoastGuard", "ChinaSeaWatch"]
+    },
+    "iraq": {
+      "iran_proxy": ["HashdAlShabi", "PMU_Iraq", "AlHashdAlShaabi", "PopularMobilizationUnits"],
+      "isis": ["ISIS_Iraq", "ISISMedia360", "AmaqAgency", "AlFurqanMedia", "IslamicStateNews"],
+      "kurdish": ["KurdistanGov", "KRG_MFA", "PeshmergaForces", "KurdishRegion", "KurdistanRegion"],
+      "baghdad": ["BaghdadUpdates", "IraqNewsAgency", "AlIraqiaTV"],
+      "shiite": ["SadrMovement", "SadristOffice", "FatahAlliance", "StateLawCoalition"],
+      "sunni": ["IraqiyaParty", "AlHadbaFront"],
+      "military": ["IraqiArmy", "IraqiMilitary", "MoD_Iraq"],
+      "basra": ["BasraUpdates", "BasraOil", "SouthernIraq"],
+      "mosul": ["MosulUpdates", "NinevehNews", "MosulEye"],
+      "kirkuk": ["KirkukUpdates", "KirkukConflict"],
+      "osint": ["IraqConflict", "IraqWarMonitor", "IraqInsight", "ISISWatch"],
+      "humanitarian": ["OCHAraq", "MSFIraq", "ICRCIraq"],
+      "iran": ["IranIraq", "IRGC_Iraq", "TehranBaghdad"]
+    },
+    "afghanistan": {
+      "taliban": ["alemara_taliban", "TalibanNews", "TalibanPress", "AfghanistanMOI", "AAF_Updates"],
+      "isis_k": ["ISISKhorasan", "ISKP_Afghanistan", "KhorasanNews"],
+      "resistance": ["NSC_Afghanistan", "AFG_Resistance", "ResistanceTaliban"],
+      "ppt": ["AfghanistanPajhwok", "ToloNews", "ShamshadNews", "EtilaatRoz", "BBCAfghanistan"],
+      "osint": ["AfghanistanWatch", "KabulUpdates", "AfghanConflict", "TalibanMonitor", "AfghanistanInsight"],
+      "humanitarian": ["OCHAAfghanistan", "UNAMA", "HRWAfghanistan", "AmnestyAfghanistan"],
+      "pakistan": ["AfghanistanPakistan", " DurandLine", "PakistanTBLA"],
+      "china": ["AfghanistanChina", "ChinaAfghanistan"],
+      "us": ["USEmbassyKabul", "USAF_Afghanistan"]
+    },
+    "venezuela": {
+      "maduro": ["NicolasMaduro", "PresidenciaVE", "VTV_Venezuela", "Mipp_Vzla"],
+      "opposition": ["JGuzmanM", "LeopoldoLopez", " VoluntadPopular", "PrimeroJusticia"],
+      "military": [" FANB_Vzla", "EjercitoBolivariano", "ArmadaBolivarian", "FuerzaArmadaNacional"],
+      "guaido": ["JGuaido", "AsambleNacional", "InterimGovernment"],
+      "orinco": ["OrinocoIron", "OrinocoOil", "VenezuelaOrinoco"],
+      "border": ["VenezuelaColombia", "FronteraVzla", "TachiraVenezuela"],
+      "caracas": ["CaracasLive", "CaracasInforma", "DistritoCapital"],
+      "maracaibo": ["MaracaiboNews", "ZuliaVenezuela"],
+      "osint": ["VenezuelaConflict", "VenezuelaInsight", "CrisisVzla", "VzlaMonitor", "VenezuelaAlert"],
+      "social": ["VzlaWitness", "VenezuelaEnCrisis", "FreeVzla"]
+    },
+    "israel_palestine": {
+      "israel_gov": ["IsraelPM", "IsraeliPM", "IsraelMFA", "IsraelSpokesperson", "GPOIsrael"],
+      "idf": ["IDFSpokesperson", "ArabicIDF", "IDF_EN", "ILIntel", "IDF_Support"],
+      "gaza_ops": ["Gaza_CO_Israel", "IOF_Gaza", "IsraelGazaWar"],
+      "west_bank": ["JudeaSamaria", "WestBankUpdates", "IsraelWB"],
+      "lebanon": ["IsraelNorth", "LebanonFront", "NorthernIsrael"],
+      "social": ["IsraelInternal", "IsraeliSpeak", "TelAvivLife"],
+      "media_il": ["Haaretz", "JerusalemPost", "YnetNews", "TimesOfIsrael", "IsraelHayom"],
+      "palestine_auth": ["PalestinianPM", "PLAMedia", "PalestineGov", "WafaNews"],
+      "osint": ["IsraelPalestine", "ConflictWatchME", "MEConflict", "GazaWarMap", "IsraelPalOSINT"]
+    },
+    "libya": {
+      "gov_national": ["GNA_Libya", "LNA_Command", "LibyanArmyNational"],
+      "lna": ["LNA_Media", "HaftarForces", "LibyanNationalArmy", "ArabianGulfOil"],
+      "gna": ["GNA_Presidency", "SarrajGovernment", "TripoliGov"],
+      "misrata": ["MisrataUpdates", "MisrataForces"],
+      "benghazi": ["BenghaziUpdates", "LNA_Operation"],
+      "oil": ["NOCLibya", "LibyaOilGuard"],
+      "militias": ["LibyaMilitias", "TripoliMilitias"],
+      "osint": ["LibyaConflict", "LibyaWatch", "LibyaInsight", "LibyaMonitor"],
+      "humanitarian": ["OCHALibya", "ICRCLibya", "UNSMILibya"],
+      "international": ["UNLibya", "UNSMIL", "LibyaIntl"]
+    },
+    "syria": {
+      "assad": ["SANA_News", "syriagov", "SARGov", "PresidencySyria", "AlThawraNews"],
+      "russia_syria": ["RussiaSyriaMoD", "SyriaRussian", "RussianMilSyria"],
+      "iran_syria": ["IranSyria", "IRGCSyria", "TehranDamascus"],
+      "turkey_syria": ["TurkeySyria", "TFAMedia", "TurkishForcesSyria"],
+      "us_syria": ["USForcesSyria", "CentcomSyria", "CoalitionSyria"],
+      "idf": ["IDF_Syria", "IsraelSyriaOps"],
+      "isis": ["ISIS_Syria", "ISISMedia360Syria"],
+      "rebel": ["SyrianRev", "SyriaCivilWar", "FSA_Opposition", "SyrianOpposition"],
+      "kurdish": ["SDF_Syria", "YPG_International", "RojavaUpdates", "AANES_Official"],
+      "aleppo": ["AleppoUpdates", "SyrianAleppo"],
+      "idlib": ["IdlibLive", "IdlibNews", "SyrianIdlib"],
+      "homs": ["HomsUpdates", "SyrianHoms"],
+      "deraa": ["DaraaUpdates", "DaraaConflict"],
+      "osint": ["SyriaConflict", "SyriaWarMonitor", "SyriaInsight", "SyriaWarMap", "AleppoWar"],
+      "humanitarian": ["OCHASyria", "MSFSyria", "ICRCSyria"]
+    },
+    "niger_dam": {
+      "niger_delta": ["NigerDeltaMilitant", "NigerDeltaAvengers", "MEND_Niger", "NDA_Niger", "OPS_Niger"],
+      "biafra": ["BiafraUpdates", "BiafraNation", "IPOB_Official"],
+      "military_ng": ["NigerianArmy", "NigeriaArmy", "NigerianNavy", "NigerianAirForce"],
+      "bh": ["BokoHaram", "BHTerrors", "ISWAP_Nigeria", "WestBorno"],
+      "iswap": ["ISWAPUpdates", "ISWAPNigeria", "LakeChadISWAP"],
+      "osint": ["NigeriaConflict", "BiafraWatch", "NigeriaInsight", "BokoHaramWatch", "NigerDeltaWatch"],
+      "lagos": ["LagosUpdates", "LagosPolice"],
+      "kano": ["KanoUpdates", "NorthernNigeria"],
+      "abia": ["AbiaNigeria", "SoutheastNigeria"]
+    },
+    "india_china": {
+      "ladakh": ["LadakhUpdates", "IndiaChinaBorder", "LAC_Updates", "GalwanValley"],
+      "arunachal": ["ArunachalUpdates", "NortheastIndia", "AssamPolice"],
+      "military_in": ["IndianArmy", "IaMeena", "ADGPI_India", "INDIAN_NAVY"],
+      "osint": ["IndiaChinaTension", "LadakhConflict", "IndoChinaWatch", "BorderAlertIndia"],
+      "maoist": ["CPI_Maoist", "NaxalUpdates", "MaoistIndia"],
+      "kashmir": ["KashmirUpdates", "KashmirConflict", "JammuKashmirPolice"],
+      "pakistan_border": ["IndiaPakistanBorder", "LOC_Updates", "AmarJawanKashmir"]
+    },
+    "taiwan_china": {
+      "china": ["ChinaTaiwan", "CCTV_Taiwan", "PLA_Eastern", "ChinaTaiwanAffairs"],
+      "taiwan": ["TaiwanMinistry", "TaiwanMOFA", "ROC_ArmedForces", "TaiwanMND"],
+      "osint": ["TaiwanStrait", "ChinaTaiwanConflict", "TaiwanWarMap", "IndoPacificWatch", "TaiwanAlert"],
+      "south_china": ["SouthChinaSea", "SCS_Disputes", "ChinaSeaNews"]
+    },
+    "south_sudan": {
+      "government": ["SouthSudanGov", "SSPDF_Official", "PresidencySS"],
+      "rebel": ["SSPDF_IO", "RiekMachar", "SouthSudanRebel"],
+      "sslm": ["SSLM_SouthSudan", "NationalLiberationSS"],
+      "military": ["SSNDF", "SouthSudanArmy", "SPLA_Updates"],
+      "osint": ["SouthSudanConflict", "SouthSudanWatch", "SSInsight"],
+      "humanitarian": ["OCHASouthSudan", "MSFSouthSudan", "UNMISS"]
+    }
+  },
+  "twitter": {
+    "sudan": [
+      "sudaneyewitness", "DarfurObserve", "RSFMonitor", "ElFasherLive", "SudanWarMonitor", 
+      "KordofanWatch", "HemedtiTracker", "SudanCrisis", "SudanConflictMap", "SudanSOS",
+      "ConflictSudan", "ASLSudan", "SudanUpdatesEn", "DarfurUpdates"
+    ],
+    "gaza": [
+      "GazaLiveNews", "RafahUpdates", "PalestineMM", "QudsNen", "ShehabEng", 
+      "EyeOnPalestine", "SuppressedNws", "GazaUnderAttack", "GazaSOS", "GazaHumanitarian",
+      "Palestine_365", "FreePalestine", "GazaCityUpdates", "RafahAlert", "PalInsight"
+    ],
+    "ukraine": [
+      "WarMonitor3", "oryxspioenkop", "Maks_NAFO_FELLA", "NOELreports", "TheStudyofWar",
+      "DeepStateUA", "Liveuamap", "WarTranslated", "AndrewPerpetua", "RikeCesti",
+      "FlashDroneUA", "UAV102Ukraine", "ZaluzhskyiA", "KpsunoS", "Arakhamain"
+    ],
+    "sahel": [
+      "SahelConflict", "MaliWatch", "BurkinaWatch", "NigerWatch", "JNIM_Monitor",
+      "SahelInsight", "WestAfricaWatch", "G5Sahel", "BarkhaneWatch", "SahelOSINT"
+    ],
+    "drc": [
+      "DRCConflict", "KivuConflict", "M23Watch", "GomaUpdates", "NordKivuWatch",
+      "ADFMonitor", "DRCInsight", "CongoWatch", "EasternDRC", "KivuInsight"
+    ],
+    "myanmar": [
+      "MyanmarOSINT", "MyanmarNOWnews", "IrrawaddyIntl", "MizzimaNews",
+      "DVB_Broadcast", "KhitThitMedia", "BNI_Myanmar", "FreeMyanmar", "MyanmarInsight"
+    ],
+    "yemen": [
+      "YemenConflict", "YemenWarMonitor", "HouthisWatch", "YemenInsight",
+      "AdenUpdates", "SanaaWatch", "YemenAlert", "RedSeaWatch"
+    ],
+    "haiti": [
+      "HaitiConflict", "HaitiCrisis", "HaitiGangs", "PortauPrince", "HaitiInsight",
+      "HaitiAlert", "G9Haiti", "MS13Haiti"
+    ],
+    "ethiopia": [
+      "EthiopiaConflict", "TigrayConflict", "AmharaCrisis", "OromiaConflict",
+      "EthiopiaInsight", "HornAfricaWatch", "ENDFUpdates", "TigrayAid"
+    ],
+    "mexico": [
+      "MexicoCartels", "CDNCarteles", "NarcosMX", "MexicoWarZone",
+      "CartelWars", "MexicoViolence", "MexicanDrugWar"
+    ],
+    "global_osint": [
+      "ConflictNews", "WarConflictNews", "GlobalConflictAlert", "ICFJ", "CrisisGroup",
+      "ACLED", "UN_OSHint", "RefugeesIntl", "HumanRightsFirst", "AmnestyNews"
+    ]
+  },
+  "discord": [
+    "osintglobal", "ukrainewarroom", "militaryosint", "sudanmonitor", 
+    "geoconfirmed", "bellingcat", "liveuamap", "osinttech",
+    "meosint", "africamonitor", "meastwatch", "asiaconflict",
+    "sahelwatch", "drccrisis", "myanmarwatch", "haitiwatch"
+  ],
+  "rss": [
+    {"name": "Reuters Africa", "url": "https://feeds.reuters.com/reuters/africanNews", "zone": "sudan"},
+    {"name": "Reuters Middle East", "url": "https://feeds.reuters.com/reuters/worldMiddleEast", "zone": "gaza"},
+    {"name": "Reuters World", "url": "https://feeds.reuters.com/reuters/worldNews", "zone": "global"},
+    {"name": "BBC Africa", "url": "https://feeds.bbci.co.uk/news/world/africa/rss.xml", "zone": "sudan"},
+    {"name": "BBC Middle East", "url": "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml", "zone": "gaza"},
+    {"name": "Al Jazeera", "url": "https://www.aljazeera.com/xml/rss/all.xml", "zone": "global"},
+    {"name": "France24", "url": "https://www.france24.com/fr/rss", "zone": "global"},
+    {"name": "Le Monde", "url": "https://www.lemonde.fr/international/rss_full.xml", "zone": "global"},
+    {"name": "UN News", "url": "https://news.un.org/feed/subscribe/en/news.rss", "zone": "global"},
+    {"name": "Amnesty", "url": "https://www.amnesty.org/en/feed/", "zone": "global"},
+    {"name": "HRW", "url": "https://www.hrw.org/rss/news.xml", "zone": "global"},
+    {"name": "ACLED", "url": "https://acleddata.com/feed/", "zone": "global"},
+    {"name": "Crisis Group", "url": "https://d9.crisisgroup.org/rss.xml", "zone": "global"},
+    {"name": "Pulitzer Center", "url": "https://pulitzercenter.org/rss.xml", "zone": "global"},
+    {"name": "Armed Conflict Location", "url": "https://acleddata.com/rss.xml", "zone": "global"},
+    {"name": "ISW Research", "url": "https://www.understandingwar.org/rss.xml", "zone": "ukraine"},
+    {"name": "Liveuamap", "url": "https://liveuamap.com/rss", "zone": "ukraine"}
+  ]
+}

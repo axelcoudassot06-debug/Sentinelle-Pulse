@@ -1,0 +1,176 @@
+{
+  "darkweb_search": {
+    "tor_engines": [
+      {"name": "ahmia", "url": "https://ahmia.fi"},
+      {"name": "torch", "url": "http://xmh57jrzrnw6insl.onion"},
+      {"name": "notevil", "url": "http://bellsowntfqhzgfst.onion"}
+    ],
+    "search_terms": [
+      {"zone": "sudan", "terms": ["sudan arms deal", "rsf weapons", "darfur gold"]},
+      {"zone": "gaza", "terms": ["gaza weapons", "idf equipment", "tunnel supplies"]},
+      {"zone": "ukraine", "terms": ["ukraine arms", "military equipment", "sanctions evasion"]},
+      {"zone": "sahel", "terms": ["sahel weapons", "jnim arms", "sahel gold"]},
+      {"zone": "drc", "terms": ["drc coltan", "cobalt conflict", "m23 weapons"]}
+    ]
+  },
+  "osint_social": {
+    "twitter_geo": [
+      {"zone": "sudan", "handles": ["@sudanese_spy", "@DarfurWar", "@RSFMonitor"]},
+      {"zone": "gaza", "handles": ["@GazaLiveNews", "@RafahUpdates", "@PalestineMM"]},
+      {"zone": "ukraine", "handles": ["@WarMonitor3", "@DeepStateUA", "@oryxspioenkop"]}
+    ],
+    "nitter_instances": [
+      "nitter.privacydev.net",
+      "nitter.poast.org",
+      "xcancel.com"
+    ]
+  },
+  "geospatial": {
+    "flight_tracking_regions": [
+      {"zone": "sudan", "lat": 15.5, "lon": 32.5, "radius_nm": 400},
+      {"zone": "gaza", "lat": 31.5, "lon": 34.3, "radius_nm": 200},
+      {"zone": "ukraine", "lat": 48.5, "lon": 32.0, "radius_nm": 500},
+      {"zone": "sahel", "lat": 15.0, "lon": 2.0, "radius_nm": 600},
+      {"zone": "drc", "lat": -1.5, "lon": 29.0, "radius_nm": 300}
+    ],
+    "vessel_tracking_regions": [
+      {"name": "red_sea", "lat": 22.0, "lon": 38.0, "radius_km": 400, "zones": ["yemen", "sudan"]},
+      {"name": "mediterranean", "lat": 35.0, "lon": 25.0, "radius_km": 500, "zones": ["gaza"]},
+      {"name": "black_sea", "lat": 44.0, "lon": 34.0, "radius_km": 400, "zones": ["ukraine"]},
+      {"name": "horn_africa", "lat": 10.0, "lon": 50.0, "radius_km": 500, "zones": ["yemen"]}
+    ],
+    "satellites": [
+      {"name": "ISS", "norad_id": 25544},
+      {"name": "COSMOS-2562", "norad_id": 56181}
+    ]
+  },
+  "geosentinel_channels": {
+    "conflict_intel": [
+      "ConflictZoneNews", "WarReportage", "GeoConflict",
+      "IntelCrisis", "CrisisMapper", "WarMapping"
+    ],
+    "osint_realtime": [
+      "OSINTresearch", "DeepStateUA", "UkraineWatch",
+      "SyriaWarMap", "Liveuamap", "WarMonitor3"
+    ],
+    "darkweb_intel": [
+      "DarkWebLeaks", "LeakCollector", "DataBreachWatch"
+    ]
+  },
+  "telegram": {
+    "sudan": {
+      "rsf_official": ["RSFSudan", "HemetiOfficial", "RapidSupport_FC"],
+      "military": ["SudanArmedForces", "SAF_News", "KhartoumLive"],
+      "darfur": ["AlFasherNow", "DarfurWitness", "ElFasherLive", "GeninaNews"],
+      "live": ["SudanLive", "SudanWarMap", "SudanBreaking", "SudanConflict"],
+      "arabic": ["SudanAkhbar", "SudanHourly", "DarfourHourly", "KordofanNews"]
+    },
+    "gaza": {
+      "eyewitness": ["GazaLive", "RafahNow", "KhanYounisLive", "GazaEyewitness"],
+      "resistance": ["qassam12", "AlQassamBrigades", "SarayaAlQuds"],
+      "proxies": ["LebanonFront", "Hezbollah1", "AnsarAllah_Media"],
+      "news": ["PalToday", "ShehabAgency", "QudsN"]
+    },
+    "ukraine": {
+      "frontlines": ["rybar", "mil_in_ua", "DeepStateUA", "wartranslated"],
+      "rus_off": ["mod_russia", "rybar_live", "z_arhiv"],
+      "ukr_off": ["ZSU_updates", "GeneralStaffUA", "ukrpravda_war"],
+      "maps": ["WarMonitor3", "Liveuamap"]
+    },
+    "sahel": {
+      "jnim": ["JNIMMedia", "ISGSahel", "MacinaKatiba"],
+      "mali": ["MaliActuLive", "BamakoLive", "FAMaOfficial"],
+      "burkina": ["BurkinaFasoLive", "VDPBurkina"],
+      "niger": ["NigerLiveNews"]
+    },
+    "drc": {
+      "m23": ["M23RDC", "ADFUpdates", "NordKivuLive"],
+      "local": ["GomaLive", "BeniActu", "IturiNews"]
+    }
+  },
+  "twitter": {
+    "sudan": [
+      "sudaneyewitness", "DarfurObserve", "RSFMonitor", "ElFasherLive",
+      "SudanWarMonitor", "KordofanWatch", "HemedtiTracker"
+    ],
+    "gaza": [
+      "GazaLiveNews", "RafahUpdates", "PalestineMM", "QudsNen",
+      "ShehabEng", "EyeOnPalestine", "SuppressedNws"
+    ],
+    "ukraine": [
+      "WarMonitor3", "oryxspioenkop", "Maks_NAFO_FELLA", "NOELreports",
+      "TheStudyofWar", "DeepStateUA", "Liveuamap", "WarTranslated"
+    ]
+  },
+  "rss": [
+    {
+      "name": "Reuters Africa",
+      "url": "https://feeds.reuters.com/reuters/africanNews",
+      "zone": "sudan"
+    },
+    {
+      "name": "Reuters World",
+      "url": "https://feeds.reuters.com/reuters/worldNews",
+      "zone": "global"
+    },
+    {
+      "name": "BBC Africa",
+      "url": "https://feeds.bbci.co.uk/news/world/africa/rss.xml",
+      "zone": "sudan"
+    },
+    {
+      "name": "BBC Middle East",
+      "url": "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml",
+      "zone": "gaza"
+    },
+    {
+      "name": "Al Jazeera",
+      "url": "https://www.aljazeera.com/xml/rss/all.xml",
+      "zone": "global"
+    },
+    {
+      "name": "France24",
+      "url": "https://www.france24.com/fr/rss",
+      "zone": "global"
+    },
+    {
+      "name": "Le Monde",
+      "url": "https://www.lemonde.fr/international/rss_full.xml",
+      "zone": "global"
+    },
+    {
+      "name": "UN News",
+      "url": "https://news.un.org/feed/subscribe/en/news.rss",
+      "zone": "global"
+    },
+    {
+      "name": "Crisis Group",
+      "url": "https://d9.crisisgroup.org/rss.xml",
+      "zone": "global"
+    },
+    {
+      "name": "Amnesty International",
+      "url": "https://www.amnesty.org/en/feed/",
+      "zone": "global"
+    },
+    {
+      "name": "HRW",
+      "url": "https://www.hrw.org/rss/news.xml",
+      "zone": "global"
+    },
+    {
+      "name": "ACLED Conflict",
+      "url": "https://acleddata.com/feed/",
+      "zone": "global"
+    },
+    {
+      "name": "Pulitzer Center",
+      "url": "https://pulitzercenter.org/rss.xml",
+      "zone": "global"
+    }
+  ],
+  "hashtags": [
+    "#الفاشر", "#دارفور", "#غزة_الآن", "#M23RDC",
+    "#SudanConflict", "#Gaza", "#Ukraine", "#Sahel"
+  ]
+}

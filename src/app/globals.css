@@ -14,6 +14,15 @@
   --cat-defense: #DC2626;
   --cat-osint: #0891B2;
   
+  --alert-critical: #DC2626;
+  --alert-high: #F97316;
+  --alert-medium: #EAB308;
+  --alert-low: #6B7280;
+  --alert-critical-bg: rgba(220, 38, 38, 0.1);
+  --alert-high-bg: rgba(249, 115, 22, 0.1);
+  --alert-medium-bg: rgba(234, 179, 8, 0.1);
+  --alert-low-bg: rgba(107, 114, 128, 0.1);
+  
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Source Sans 3', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -36,6 +45,14 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
   --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
+  --alert-critical: #EF4444;
+  --alert-high: #FB923C;
+  --alert-medium: #FACC15;
+  --alert-low: #9CA3AF;
+  --alert-critical-bg: rgba(239, 68, 68, 0.15);
+  --alert-high-bg: rgba(251, 146, 60, 0.15);
+  --alert-medium-bg: rgba(250, 204, 21, 0.15);
+  --alert-low-bg: rgba(156, 163, 175, 0.15);
 }
 
 * {
