@@ -29,9 +29,32 @@ export default function ContentRenderer({ content }: ContentRendererProps) {
     return `<div class="callout warning"><div class="callout-icon">⚠</div><div class="callout-body">${p1.trim()}</div></div>`;
   });
 
-  // 4c. DEBATE blocks — Objection / Réponse analytique
+  // 4c. DEBATE blocks — Thèse / Antithèse / Synthèse ou Objection / Réponse
   html = html.replace(/<DEBATE>([\s\S]*?)<\/DEBATE>/g, (_, p1) => {
-    const parts = p1.split('|||');
+    const body = p1.trim();
+
+    // Format new : **Thèse ...** / **Antithèse ...** / **Synthèse ...**
+    if (/\*\*Thès/i.test(body) || /\*\*Antithès/i.test(body)) {
+      // Split on bold section headers
+      const thèseMatch   = body.match(/\*\*Thès[^*]*\*\*[^]*?(?=\*\*Antithès|\*\*Synthès|$)/i);
+      const antithèseMatch = body.match(/\*\*Antithès[^*]*\*\*[^]*?(?=\*\*Synthès|$)/i);
+      const synthèseMatch = body.match(/\*\*Synthès[^*]*\*\*[^]*/i);
+
+      const fmt = (s: string | null) => (s || '').replace(/\*\*[^*]+\*\*\s*:?\s*/, '').replace(/\n/g, ' ').trim();
+
+      const these    = fmt(thèseMatch   ? thèseMatch[0]   : null);
+      const antithese = fmt(antithèseMatch ? antithèseMatch[0] : null);
+      const synthese  = fmt(synthèseMatch ? synthèseMatch[0] : null);
+
+      return `<div class="debate-trio">` +
+        `<div class="debate-item debate-these"><div class="debate-label">🔵 Thèse</div><p>${these}</p></div>` +
+        `<div class="debate-item debate-antithese"><div class="debate-label">🔴 Antithèse</div><p>${antithese}</p></div>` +
+        (synthese ? `<div class="debate-item debate-synthese"><div class="debate-label">✅ Synthèse</div><p>${synthese}</p></div>` : '') +
+        `</div>`;
+    }
+
+    // Format legacy : texte ||| texte
+    const parts = body.split('|||');
     const claim = (parts[0] || '').trim();
     const response = (parts[1] || '').trim();
     return `<div class="debate-wrap"><div class="debate-claim"><div class="debate-label">⚡ Objection</div><p>${claim}</p></div><div class="debate-response"><div class="debate-label">✓ Réponse analytique</div><p>${response}</p></div></div>`;
@@ -325,6 +348,34 @@ export default function ContentRenderer({ content }: ContentRendererProps) {
     @media (max-width: 640px) {
       .art-body .debate-wrap { grid-template-columns: 1fr; }
       .art-body .debate-claim { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* ── Debate trio (Thèse / Antithèse / Synthèse) ── */
+    .art-body .debate-trio {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 2.5rem 0;
+    }
+    .art-body .debate-item {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .art-body .debate-item:last-child { border-bottom: none; }
+    .art-body .debate-these   { background: rgba(8,145,178,0.05); }
+    .art-body .debate-antithese { background: rgba(220,38,38,0.05); }
+    .art-body .debate-synthese  { background: rgba(5,150,105,0.05); }
+    .art-body .debate-these   .debate-label { color: #0891B2; }
+    .art-body .debate-antithese .debate-label { color: #DC2626; }
+    .art-body .debate-synthese  .debate-label { color: #059669; }
+    .art-body .debate-item p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin: 0;
+      color: var(--text-primary);
     }
 
     /* ── Responsive ── */
