@@ -18,40 +18,56 @@ export async function generateStaticParams() {
   return articles.map((article) => ({ id: article.id }));
 }
 
+const categoryKeywords: Record<string, string[]> = {
+  geopolitique: ['géopolitique', 'relations internationales', 'politique étrangère', 'analyse géopolitique 2026', 'diplomatie'],
+  defense:      ['défense nationale', 'armée', 'sécurité nationale', 'stratégie militaire', 'OTAN', 'réarmement 2026'],
+  economie:     ['économie mondiale', 'finance internationale', 'analyse économique 2026', 'marchés financiers', 'FMI'],
+  osint:        ['OSINT', 'renseignement open source', 'investigation numérique', 'veille stratégique', 'cybersécurité'],
+};
+
 export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
   const article = getArticleById(id);
   if (!article) return { title: 'Article non trouvé' };
 
-  const keywords = [
-    ...article.title.split(/[\s—–\-·]+/).filter((w: string) => w.length > 4),
-    article.category,
+  // Rich keyword set: title words + category-specific + global
+  const titleWords = article.title.split(/[\s—–\-·,]+/).filter((w: string) => w.length > 4);
+  const catKw = categoryKeywords[article.category] ?? [];
+  const keywords = [...new Set([
+    ...titleWords,
+    ...catKw,
     'Sentinelle Pulse',
-    'analyse géopolitique',
-    'renseignement',
-  ];
+    'analyse stratégique',
+    'données chiffrées 2026',
+  ])];
+
+  // SEO-optimised description: excerpt + CTA with keywords
+  const catLabel: Record<string,string> = { geopolitique:'géopolitique', defense:'défense', economie:'économie', osint:'OSINT' };
+  const description = `${article.excerpt.substring(0, 140)} — Analyse ${catLabel[article.category] ?? ''} approfondie, chiffres 2025-2026, chronologie et scénarios. Sentinelle Pulse.`;
+
+  const ogImageUrl = `${siteConfig.url}/api/og?id=${article.id}`;
 
   return {
-    title: `${article.title} | Sentinelle Pulse`,
-    description: `${article.excerpt} Analyse approfondie, données chiffrées, chronologie.`,
+    title: `${article.title} — Analyse ${catLabel[article.category] ?? ''} | Sentinelle Pulse`,
+    description,
     keywords,
     authors: [{ name: article.author }],
     openGraph: {
       title: article.title,
-      description: article.excerpt,
+      description,
       type: 'article',
       publishedTime: article.date,
       modifiedTime: article.date,
       authors: [article.author],
       section: article.category,
       tags: keywords,
-      images: [{ url: `${siteConfig.url}/og-image.jpg`, width: 1200, height: 630, alt: article.title }],
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: article.title }],
     },
     twitter: {
       card: 'summary_large_image' as const,
       title: article.title,
-      description: article.excerpt,
-      images: [`${siteConfig.url}/og-image.jpg`],
+      description,
+      images: [ogImageUrl],
       creator: '@sentinellepulse',
     },
     alternates: { canonical: `${siteConfig.url}/article/${article.id}` },
@@ -60,6 +76,9 @@ export async function generateMetadata({ params }: PageProps) {
       follow: true,
       'max-snippet': -1,
       'max-image-preview': 'large' as const,
+    },
+    other: {
+      'news_keywords': keywords.slice(0, 10).join(', '),
     },
   };
 }

@@ -5,7 +5,7 @@ export const siteConfig = {
   name: 'Sentinelle Pulse',
   description: "Sentinelle Pulse — Magazine d'analyse géopolitique, défense nationale, OSINT et économie mondiale. Décryptages experts, données chiffrées 2025-2026, chronologies stratégiques. Renseignement, guerre hybride, intelligence économique.",
   url: 'https://sentinelle-pulse.vercel.app',
-  ogImage: '/og-image.jpg',
+  ogImage: '/api/og',
 };
 
 export function generateMetadata(): Metadata {
@@ -96,7 +96,7 @@ export function generateArticleSchema(article: typeof articles[0]) {
     image: [
       {
         '@type': 'ImageObject',
-        url: `${siteConfig.url}/og-image.jpg`,
+        url: `${siteConfig.url}/api/og?id=${article.id}`,
         width: 1200,
         height: 630,
       },
