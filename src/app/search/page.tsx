@@ -1,129 +1,138 @@
 'use client';
 
-import { Suspense, useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useState, useEffect, useRef } from 'react';
 import { articles } from '@/lib/data';
+import { Article } from '@/lib/data';
 import ArticleCard from '@/components/ArticleCard';
-import { Search, Loader2 } from 'lucide-react';
+import { Search, X, LayoutGrid } from 'lucide-react';
+import Link from 'next/link';
+import styles from './page.module.css';
 
-function SearchContent() {
-  const searchParams = useSearchParams();
-  const query = searchParams.get('q') || '';
-  const [searchQuery, setSearchQuery] = useState(query);
-  const [results, setResults] = useState<typeof articles>([]);
+const CATEGORIES = [
+  { id: 'geopolitique', label: 'Géopolitique', color: '#7C3AED' },
+  { id: 'defense',      label: 'Défense',      color: '#DC2626' },
+  { id: 'economie',     label: 'Économie',      color: '#059669' },
+  { id: 'osint',        label: 'OSINT',         color: '#0891B2' },
+];
+
+export default function SearchPage() {
+  const [query, setQuery]         = useState('');
+  const [results, setResults]     = useState<Article[]>([]);
+  const [hasSearched, setHasSearched] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => { inputRef.current?.focus(); }, []);
 
   useEffect(() => {
-    if (query) {
-      const q = query.toLowerCase();
-      const filtered = articles.filter(a => 
-        a.title.toLowerCase().includes(q) || 
-        a.excerpt.toLowerCase().includes(q) ||
-        a.content.toLowerCase().includes(q)
-      );
-      setResults(filtered);
-    } else {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    if (query.trim().length < 2) {
       setResults([]);
+      setHasSearched(false);
+      return;
     }
+    timerRef.current = setTimeout(() => {
+      const q = query.toLowerCase().trim();
+      const found = articles.filter(a =>
+        a.title.toLowerCase().includes(q) ||
+        a.excerpt.toLowerCase().includes(q) ||
+        a.category.toLowerCase().includes(q) ||
+        (a.series ?? '').toLowerCase().includes(q)
+      );
+      setResults(found);
+      setHasSearched(true);
+    }, 280);
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
   }, [query]);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    const url = new URL(window.location.href);
-    url.searchParams.set('q', searchQuery);
-    window.history.pushState({}, '', url);
-    const q = searchQuery.toLowerCase();
-    const filtered = articles.filter(a => 
-      a.title.toLowerCase().includes(q) || 
-      a.excerpt.toLowerCase().includes(q) ||
-      a.content.toLowerCase().includes(q)
-    );
-    setResults(filtered);
+  const clear = () => {
+    setQuery('');
+    setResults([]);
+    setHasSearched(false);
+    inputRef.current?.focus();
   };
 
   return (
-    <div style={{ padding: '48px 0', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ marginBottom: '24px' }}>Recherche</h1>
-      
-      <form onSubmit={handleSearch} style={{ marginBottom: '32px' }}>
-        <div style={{ position: 'relative' }}>
-          <Search 
-            size={20} 
-            style={{ 
-              position: 'absolute', 
-              left: '16px', 
-              top: '50%', 
-              transform: 'translateY(-50%)',
-              color: 'var(--text-secondary)'
-            }} 
-          />
-          <input
-            type="text"
-            placeholder="Rechercher un article..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '16px 16px 16px 48px',
-              border: '1px solid var(--border)',
-              borderRadius: '12px',
-              background: 'var(--surface)',
-              color: 'var(--text-primary)',
-              fontSize: '1rem',
-              fontFamily: 'var(--font-body)'
-            }}
-          />
+    <div>
+      {/* Search hero */}
+      <div className={styles.hero}>
+        <div className="container">
+          <div className={styles.heroInner}>
+            <div className={styles.eyebrow}><Search size={12} />RECHERCHE</div>
+            <h1 className={styles.heroTitle}>Rechercher une analyse</h1>
+            <p className={styles.heroSub}>{articles.length} analyses — géopolitique, défense, économie, OSINT</p>
+
+            <div className={styles.searchBar}>
+              <Search size={18} className={styles.searchIcon} />
+              <input
+                ref={inputRef}
+                type="search"
+                className={styles.searchInput}
+                placeholder="Ex : Corée du Nord, OTAN, IA, Taïwan…"
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                autoComplete="off"
+                spellCheck={false}
+              />
+              {query && (
+                <button className={styles.clearBtn} onClick={clear} aria-label="Effacer">
+                  <X size={16} />
+                </button>
+              )}
+            </div>
+          </div>
         </div>
-      </form>
+      </div>
 
-      {query && (
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>
-          {results.length} résultat{results.length !== 1 ? 's' : ''} pour &quot;{query}&quot;
-        </p>
-      )}
+      <div className="container">
+        {hasSearched && (
+          <div className={styles.resultsSection}>
+            <p className={styles.resultsCount}>
+              {results.length} résultat{results.length !== 1 ? 's' : ''} pour «&nbsp;{query}&nbsp;»
+            </p>
+            {results.length > 0 ? (
+              <div className={styles.grid}>
+                {results.map(article => (
+                  <ArticleCard key={article.id} article={article} />
+                ))}
+              </div>
+            ) : (
+              <div className={styles.empty}>
+                <Search size={28} className={styles.emptyIcon} />
+                <p className={styles.emptyTitle}>Aucun résultat pour «&nbsp;{query}&nbsp;»</p>
+                <p className={styles.emptySub}>Essayez avec un autre terme ou parcourez une catégorie ci-dessous</p>
+              </div>
+            )}
+          </div>
+        )}
 
-      {results.length > 0 ? (
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: '24px'
-        }}>
-          {results.map(article => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-      ) : query ? (
-        <p style={{ color: 'var(--text-secondary)' }}>
-          Aucun résultat trouvé pour votre recherche.
-        </p>
-      ) : null}
-    </div>
-  );
-}
-
-function SearchLoading() {
-  return (
-    <div style={{ 
-      padding: '48px 0', 
-      maxWidth: '800px', 
-      margin: '0 auto',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '12px',
-      color: 'var(--text-secondary)'
-    }}>
-      <Loader2 size={24} className="animate-spin" />
-      Chargement...
-    </div>
-  );
-}
-
-export default function SearchPage() {
-  return (
-    <div className="container">
-      <Suspense fallback={<SearchLoading />}>
-        <SearchContent />
-      </Suspense>
+        {!hasSearched && (
+          <div className={styles.categoriesSection}>
+            <div className={styles.categoriesHeader}>
+              <LayoutGrid size={13} />
+              <span>Parcourir par catégorie</span>
+            </div>
+            <div className={styles.categoriesGrid}>
+              {CATEGORIES.map(cat => (
+                <Link
+                  key={cat.id}
+                  href={`/${cat.id}`}
+                  className={styles.catCard}
+                  style={{ '--cat-color': cat.color } as React.CSSProperties}
+                >
+                  <span className={styles.catDot} style={{ background: cat.color }} />
+                  <div>
+                    <span className={styles.catLabel}>{cat.label}</span>
+                    <span className={styles.catCount}>
+                      {articles.filter(a => a.category === cat.id).length} analyses
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

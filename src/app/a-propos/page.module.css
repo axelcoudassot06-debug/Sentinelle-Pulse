@@ -1,0 +1,275 @@
+/* ════════════════════════════════════════════
+   À PROPOS PAGE
+   ════════════════════════════════════════════ */
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0f0a1e 0%, #1a0e2e 50%, #0d1a2e 100%);
+  padding: 56px 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.heroInner { max-width: 760px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.heroSub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+
+.heroStats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.heroStat {
+  display: flex;
+  flex-direction: column;
+  padding: 0 28px;
+}
+
+.heroStat:first-child { padding-left: 0; }
+
+.heroStat strong {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.9);
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+.heroStat span {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.heroStatDivider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* ── Sections ── */
+.section { padding: 56px 0; }
+
+.sectionDark {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionInner { max-width: 860px; }
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: var(--text-primary);
+}
+
+/* ── Author ── */
+.authorCard {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.authorAvatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C41E3A, #7C3AED);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(196,30,58,0.3);
+}
+
+.authorBody { flex: 1; min-width: 0; }
+
+.authorName {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.authorRole {
+  font-size: 0.85rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.authorBio {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.authorBio:last-child { margin-bottom: 0; }
+
+/* ── Pillars ── */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.pillarCard {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-top-width: 3px;
+  border-radius: 10px;
+}
+
+.pillarDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.pillarLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pillarDesc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.pillarCount {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ── Methodology ── */
+.methodoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.methodoCard {
+  padding: 24px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.methodoIcon {
+  color: var(--accent-primary);
+  margin-bottom: 12px;
+}
+
+.methodoTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.methodoDesc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── Stack ── */
+.stackList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stackBadge {
+  display: inline-block;
+  padding: 7px 16px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero { padding: 36px 0 32px; }
+  .heroStats { gap: 0; }
+  .heroStat { padding: 0 18px; }
+  .heroStat strong { font-size: 1.3rem; }
+  .section { padding: 40px 0; }
+  .authorCard { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+  .authorBio { text-align: left; }
+  .pillarsGrid { grid-template-columns: 1fr; }
+  .methodoGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .heroStat { padding: 0 12px; }
+  .heroStat strong { font-size: 1.1rem; }
+  .heroStatDivider { height: 28px; }
+}

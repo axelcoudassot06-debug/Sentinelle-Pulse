@@ -1,166 +1,175 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/seo';
+import { articles } from '@/lib/data';
+import { Shield, BookOpen, Target, Database, RefreshCw, Globe, Cpu, FileText } from 'lucide-react';
+import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'À propos | Sentinelle Pulse',
-  description: 'Découvrez Sentinelle Pulse, votre source d\'analyse stratégique sur l\'économie, la géopolitique, la défense et l\'OSINT. Fondé par Axel Coudassot-Berducou.',
-  alternates: {
-    canonical: `${siteConfig.url}/a-propos`,
-  },
+  title: 'À propos — Mission & Méthodologie | Sentinelle Pulse',
+  description: 'Sentinelle Pulse : magazine d\'analyse géopolitique, défense, économie et OSINT fondé par Axel Coudassot-Berducou. Indépendant, sourcé, chiffres 2025-2026.',
+  keywords: ['Axel Coudassot-Berducou', 'Sentinelle Pulse', 'analyste indépendant', 'géopolitique', 'renseignement', 'OSINT', 'analyse stratégique', 'défense'],
+  alternates: { canonical: `${siteConfig.url}/a-propos` },
 };
 
+const PILLARS = [
+  { color: '#7C3AED', label: 'Géopolitique', id: 'geopolitique',
+    desc: 'Relations internationales, conflits, alliances, diplomatie et équilibres de puissance.' },
+  { color: '#DC2626', label: 'Défense',       id: 'defense',
+    desc: 'Capacités militaires, réarmement, cyberdéfense et sécurité nationale.' },
+  { color: '#059669', label: 'Économie',      id: 'economie',
+    desc: 'Marchés financiers, politiques monétaires, intelligence économique et sanctions.' },
+  { color: '#0891B2', label: 'OSINT',         id: 'osint',
+    desc: 'Renseignement en sources ouvertes, investigation numérique et veille stratégique.' },
+];
+
+const METHODO = [
+  { icon: <Globe size={20} />,     title: 'Sources primaires',
+    desc: "Chaque analyse s'appuie sur des sources officielles, rapports institutionnels et données chiffrées vérifiables." },
+  { icon: <RefreshCw size={20} />, title: 'Recoupement',
+    desc: 'Les faits sont recoupés sur au moins deux sources indépendantes avant publication.' },
+  { icon: <Database size={20} />,  title: 'Données actualisées',
+    desc: 'Chiffres 2025-2026 mis à jour systématiquement. Chaque analyse précise la date des données utilisées.' },
+  { icon: <Target size={20} />,    title: 'Indépendance éditoriale',
+    desc: 'Aucun financement publicitaire ou partisan. Sentinelle Pulse est entièrement indépendant.' },
+];
+
+const STACK = ['Next.js 16', 'TypeScript', 'Open Data', 'SIPRI', 'FMI / Banque Mondiale', 'OSINT public', 'CSS Modules'];
+
 export default function AboutPage() {
+  const totalMinutes = articles.reduce((s, a) => s + a.readTime, 0);
+
   return (
-    <div className="container" style={{ maxWidth: '800px', padding: '48px 24px' }}>
-      <h1 style={{ 
-        fontSize: 'clamp(2rem, 5vw, 3rem)', 
-        marginBottom: '16px',
-        lineHeight: 1.2
-      }}>
-        À propos de Sentinelle Pulse
-      </h1>
-      
-      <p style={{ 
-        fontSize: '1.25rem', 
-        color: 'var(--text-secondary)',
-        marginBottom: '48px',
-        lineHeight: 1.6
-      }}>
-        Votre source d'analyse stratégique sur l'économie, la géopolitique, la défense et l'OSINT.
-      </p>
-
-      <div style={{ 
-        background: 'var(--surface)', 
-        borderRadius: '16px', 
-        padding: '32px',
-        marginBottom: '48px',
-        border: '1px solid var(--border)'
-      }}>
-        <h2 style={{ marginBottom: '24px' }}>Le fondateur</h2>
-        <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-          <div style={{
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            background: 'var(--accent-secondary)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            fontSize: '2.5rem',
-            fontWeight: 'bold',
-            flexShrink: 0
-          }}>
-            AC
-          </div>
-          <div style={{ flex: 1, minWidth: '200px' }}>
-            <h3 style={{ marginBottom: '8px' }}>Axel Coudassot-Berducou</h3>
-            <p style={{ 
-              color: 'var(--accent-primary)', 
-              fontWeight: 600, 
-              marginBottom: '16px' 
-            }}>
-              Fondateur & Directeur
-            </p>
-            <p style={{ 
-              color: 'var(--text-secondary)', 
-              lineHeight: 1.6 
-            }}>
-              Analyste indépendant spécialisé dans les enjeux stratégiques. 
-              Sentinelle Pulse est né d'une conviction : décrypter les dynamiques 
-              mondiales pour mieux les comprendre.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style={{ marginBottom: '48px' }}>
-        <h2 style={{ marginBottom: '24px' }}>Notre mission</h2>
-        <p style={{ 
-          fontSize: '1.125rem', 
-          lineHeight: 1.8, 
-          color: 'var(--text-secondary)',
-          marginBottom: '24px'
-        }}>
-          Sentinelle Pulse est un média d'analyse stratégique qui couvre quatre piliers fondamentaux :
-        </p>
-        
-        <div style={{ display: 'grid', gap: '16px' }}>
-          {[
-            { 
-              title: 'Économie', 
-              desc: 'Analyse des marchés, des politiques monétaires et des tendances économiques mondiales.',
-              color: '#059669'
-            },
-            { 
-              title: 'Géopolitique', 
-              desc: 'Suivi des relations internationales, des conflits et des alliances stratégiques.',
-              color: '#7C3AED'
-            },
-            { 
-              title: 'Défense', 
-              desc: 'Couverture des questions de sécurité, de défense et des capacités militaires.',
-              color: '#DC2626'
-            },
-            { 
-              title: 'OSINT', 
-              desc: 'Renseignement en sources ouvertes et analyse des données publiques.',
-              color: '#0891B2'
-            }
-          ].map((item) => (
-            <div key={item.title} style={{
-              padding: '20px',
-              background: 'var(--surface)',
-              borderRadius: '12px',
-              border: '1px solid var(--border)',
-              borderLeft: `4px solid ${item.color}`
-            }}>
-              <h3 style={{ 
-                color: item.color, 
-                marginBottom: '8px',
-                fontSize: '1.125rem'
-              }}>
-                {item.title}
-              </h3>
-              <p style={{ color: 'var(--text-secondary)', margin: 0 }}>
-                {item.desc}
-              </p>
+    <div>
+      {/* ── Hero ── */}
+      <div className={styles.hero}>
+        <div className="container">
+          <div className={styles.heroInner}>
+            <div className={styles.eyebrow}>
+              <Shield size={12} />
+              À PROPOS · SENTINELLE PULSE
             </div>
-          ))}
+            <h1 className={styles.heroTitle}>Intelligence stratégique, <br />données vérifiées</h1>
+            <p className={styles.heroSub}>
+              Magazine d'analyse géopolitique, défense, économie et OSINT. 150 analyses publiées,
+              entièrement indépendant, chiffres 2025-2026.
+            </p>
+            <div className={styles.heroStats}>
+              <div className={styles.heroStat}>
+                <strong>{articles.length}</strong>
+                <span>analyses publiées</span>
+              </div>
+              <div className={styles.heroStatDivider} />
+              <div className={styles.heroStat}>
+                <strong>4</strong>
+                <span>domaines couverts</span>
+              </div>
+              <div className={styles.heroStatDivider} />
+              <div className={styles.heroStat}>
+                <strong>{Math.round(totalMinutes / 60)}h</strong>
+                <span>de contenu</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div style={{ 
-        background: 'var(--surface)', 
-        borderRadius: '16px', 
-        padding: '32px',
-        border: '1px solid var(--border)'
-      }}>
-        <h2 style={{ marginBottom: '16px' }}>Contactez-nous</h2>
-        <p style={{ 
-          color: 'var(--text-secondary)', 
-          marginBottom: '24px',
-          lineHeight: 1.6
-        }}>
-          Vous avez une question, une suggestion ou souhaitez collaborer ? 
-          N'hésitez pas à nous contacter.
-        </p>
-        <a 
-          href="mailto:contact@sentinellepulse.com"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '12px 24px',
-            background: 'var(--accent-primary)',
-            color: 'white',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontWeight: 600
-          }}
-        >
-          Envoyer un email
-        </a>
+      {/* ── Author ── */}
+      <div className={styles.section}>
+        <div className="container">
+          <div className={styles.sectionInner}>
+            <div className={styles.sectionLabel}>
+              <BookOpen size={13} />
+              LE FONDATEUR
+            </div>
+            <div className={styles.authorCard}>
+              <div className={styles.authorAvatar}>AC</div>
+              <div className={styles.authorBody}>
+                <h2 className={styles.authorName}>Axel Coudassot-Berducou</h2>
+                <p className={styles.authorRole}>Analyste indépendant en géopolitique & intelligence stratégique</p>
+                <p className={styles.authorBio}>
+                  Sentinelle Pulse est né d'une conviction : les dynamiques mondiales qui façonnent
+                  notre quotidien méritent une analyse rigoureuse, accessible et sans compromis éditorial.
+                </p>
+                <p className={styles.authorBio}>
+                  Chaque analyse s'appuie sur des sources primaires, des chiffres actualisés et
+                  une mise en perspective scénarios-chronologie-acteurs clés, pour donner au lecteur
+                  les outils intellectuels nécessaires à sa propre compréhension du monde.
+                </p>
+                <p className={styles.authorBio}>
+                  Le site couvre quatre piliers interdépendants — géopolitique, défense, économie et OSINT —
+                  avec l'exigence de neutralité analytique et d'indépendance éditoriale totale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── 4 pillars ── */}
+      <div className={`${styles.section} ${styles.sectionDark}`}>
+        <div className="container">
+          <div className={styles.sectionInner}>
+            <div className={styles.sectionLabel}>
+              <Target size={13} />
+              LES 4 PILIERS ÉDITORIAUX
+            </div>
+            <h2 className={styles.sectionTitle}>Ce que nous couvrons</h2>
+            <div className={styles.pillarsGrid}>
+              {PILLARS.map(p => (
+                <div key={p.id} className={styles.pillarCard} style={{ borderTopColor: p.color }}>
+                  <div className={styles.pillarDot} style={{ background: p.color }} />
+                  <div>
+                    <h3 className={styles.pillarLabel} style={{ color: p.color }}>{p.label}</h3>
+                    <p className={styles.pillarDesc}>{p.desc}</p>
+                    <span className={styles.pillarCount}>
+                      {articles.filter(a => a.category === p.id).length} analyses publiées
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Methodology ── */}
+      <div className={styles.section}>
+        <div className="container">
+          <div className={styles.sectionInner}>
+            <div className={styles.sectionLabel}>
+              <FileText size={13} />
+              MÉTHODOLOGIE
+            </div>
+            <h2 className={styles.sectionTitle}>Comment nous travaillons</h2>
+            <div className={styles.methodoGrid}>
+              {METHODO.map(m => (
+                <div key={m.title} className={styles.methodoCard}>
+                  <div className={styles.methodoIcon}>{m.icon}</div>
+                  <h3 className={styles.methodoTitle}>{m.title}</h3>
+                  <p className={styles.methodoDesc}>{m.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Stack ── */}
+      <div className={`${styles.section} ${styles.sectionDark}`}>
+        <div className="container">
+          <div className={styles.sectionInner}>
+            <div className={styles.sectionLabel}>
+              <Cpu size={13} />
+              STACK TECHNIQUE & SOURCES
+            </div>
+            <h2 className={styles.sectionTitle}>Technologies & données</h2>
+            <div className={styles.stackList}>
+              {STACK.map(s => (
+                <span key={s} className={styles.stackBadge}>{s}</span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

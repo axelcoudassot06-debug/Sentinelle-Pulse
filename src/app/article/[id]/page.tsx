@@ -9,6 +9,7 @@ import ShareButtons from '@/components/ShareButtons';
 import ProfessionalContentRenderer from '@/components/ProfessionalContentRenderer';
 import ClientChartsWrapper from '@/components/ClientChartsWrapper';
 import ClientMobileFeatures from './ClientMobileFeatures';
+import articleStyles from './article.module.css';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -139,7 +140,7 @@ export default async function ArticlePage({ params }: PageProps) {
           {/* Glow */}
           <div style={{ position:'absolute',top:-80,right:-80,width:360,height:360,borderRadius:'50%',background:color,opacity:0.07,filter:'blur(80px)' }} />
 
-          <div className="container" style={{ maxWidth:900, padding:'48px 24px 40px', position:'relative', zIndex:1 }}>
+          <div className={`container ${articleStyles.heroInner}`} style={{ maxWidth:900, position:'relative', zIndex:1 }}>
             {/* Breadcrumb */}
             <Link href="/" style={{ display:'inline-flex',alignItems:'center',gap:6,color:'rgba(255,255,255,0.4)',fontSize:'0.8rem',marginBottom:28,textDecoration:'none' }}>
               <ArrowLeft size={14} /> Accueil
@@ -183,13 +184,13 @@ export default async function ArticlePage({ params }: PageProps) {
 
         {/* ── Main layout ── */}
         <div className="container" style={{ maxWidth:1200,padding:'0 24px' }}>
-          <div style={{ display:'grid',gridTemplateColumns:'1fr 300px',gap:56,alignItems:'start',padding:'56px 0 80px' }}>
+          <div className={articleStyles.articleGrid}>
 
             {/* ── Content column ── */}
             <div>
               {/* Author + share strip */}
-              <div style={{ display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:40,paddingBottom:24,borderBottom:'1px solid var(--border)' }}>
-                <div style={{ display:'flex',alignItems:'center',gap:12 }}>
+              <div className={articleStyles.authorStrip}>
+                <div className={articleStyles.authorInfo}>
                   <div style={{ width:44,height:44,borderRadius:'50%',background:bg,display:'flex',alignItems:'center',justifyContent:'center',color:'white',fontWeight:800,fontSize:'0.9rem',flexShrink:0 }}>
                     AC
                   </div>
@@ -202,7 +203,7 @@ export default async function ArticlePage({ params }: PageProps) {
               </div>
 
               {/* Excerpt lead */}
-              <p style={{ fontSize:'1.2rem',fontWeight:500,lineHeight:1.65,color:'var(--text-secondary)',marginBottom:36,fontStyle:'italic',borderLeft:`3px solid ${color}`,paddingLeft:20 }}>
+              <p className={articleStyles.excerptLead} style={{ borderLeftColor: color }}>
                 {article.excerpt}
               </p>
 
@@ -216,7 +217,7 @@ export default async function ArticlePage({ params }: PageProps) {
             </div>
 
             {/* ── Sidebar ── */}
-            <aside style={{ position:'sticky',top:24 }}>
+            <aside className={articleStyles.sidebar}>
               {/* Article info card */}
               <div style={{ background:'var(--surface)',border:'1px solid var(--border)',borderRadius:12,overflow:'hidden',marginBottom:24 }}>
                 <div style={{ background:bg,padding:'16px 20px' }}>
@@ -281,18 +282,6 @@ export default async function ArticlePage({ params }: PageProps) {
         </div>
       </article>
 
-      {/* ── Responsive sidebar collapse ── */}
-      <style>{`
-        @media (max-width: 900px) {
-          article > div.container > div {
-            grid-template-columns: 1fr !important;
-          }
-          article > div.container > div > aside {
-            position: static !important;
-            order: -1;
-          }
-        }
-      `}</style>
     </>
   );
 }

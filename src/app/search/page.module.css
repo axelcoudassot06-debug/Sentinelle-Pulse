@@ -1,0 +1,210 @@
+/* ════════════════════════════════════════════
+   SEARCH PAGE
+   ════════════════════════════════════════════ */
+
+.hero {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 40px 0 32px;
+}
+
+.heroInner {
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.heroSub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* Search bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--background);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 0 14px;
+  transition: border-color 180ms, box-shadow 180ms;
+}
+
+.searchBar:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+}
+
+.searchIcon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 16px 0;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  min-width: 0;
+}
+
+.searchInput::placeholder { color: var(--text-secondary); }
+.searchInput::-webkit-search-cancel-button { display: none; }
+
+.clearBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--border);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: background 150ms, color 150ms;
+}
+
+.clearBtn:hover {
+  background: var(--accent-primary);
+  color: white;
+}
+
+/* Results */
+.resultsSection { padding: 32px 0 60px; }
+
+.resultsCount {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.emptyIcon {
+  color: var(--border);
+  margin-bottom: 16px;
+}
+
+.emptyTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.emptySub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Default — categories */
+.categoriesSection { padding: 32px 0 60px; }
+
+.categoriesHeader {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.catCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 180ms, box-shadow 180ms, border-color 180ms;
+  border-top: 3px solid var(--cat-color, var(--border));
+}
+
+.catCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--cat-color, var(--border));
+}
+
+.catDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.catLabel {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.catCount {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .categoriesGrid { grid-template-columns: 1fr; }
+  .hero { padding: 28px 0 24px; }
+  .searchInput { font-size: 0.95rem; padding: 14px 0; }
+}
