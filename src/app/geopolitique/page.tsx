@@ -12,9 +12,23 @@ export function generateStaticParams() {
 export async function generateMetadata() {
   return {
     title: `${cat.name} | Sentinelle Pulse`,
-    description: `Articles sur l'actualité ${cat.name.toLowerCase()}. Analyses approfondies et actualité en temps réel sur ${cat.name.toLowerCase()}.`,
+    description: `Décryptages géopolitiques : relations internationales, diplomatie, conflits, puissance mondiale. Analyses stratégiques 2025-2026 par des experts.`,
+    keywords: ['géopolitique', 'relations internationales', 'diplomatie', 'puissance mondiale', 'conflits géopolitiques', 'sécurité internationale', 'stratégie géopolitique', 'analyse géopolitique France'],
     alternates: {
       canonical: `${siteConfig.url}/${categoryId}`,
+    },
+    openGraph: {
+      title: `${cat.name} | Sentinelle Pulse`,
+      description: `Décryptages géopolitiques : relations internationales, diplomatie, conflits, puissance mondiale.`,
+      type: 'website' as const,
+      images: [{ url: `${siteConfig.url}/og-image.jpg`, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: `${cat.name} | Sentinelle Pulse`,
+      description: `Décryptages géopolitiques : relations internationales, diplomatie, conflits, puissance mondiale.`,
+      images: [`${siteConfig.url}/og-image.jpg`],
+      creator: '@sentinellepulse',
     },
   };
 }

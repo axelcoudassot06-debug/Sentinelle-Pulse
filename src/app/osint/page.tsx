@@ -12,9 +12,23 @@ export function generateStaticParams() {
 export async function generateMetadata() {
   return {
     title: `${cat.name} | Sentinelle Pulse`,
-    description: `Articles sur l'actualité ${cat.name.toLowerCase()}. Analyses approfondies et actualité en temps réel sur ${cat.name.toLowerCase()}.`,
+    description: `Renseignement open source : OSINT, espionnage, cybersécurité, surveillance, services secrets, IA et renseignement. Analyses techniques 2025-2026.`,
+    keywords: ['OSINT', 'renseignement open source', 'espionnage', 'cybersécurité', 'surveillance', 'renseignement militaire', 'services secrets', 'intelligence artificielle renseignement'],
     alternates: {
       canonical: `${siteConfig.url}/${categoryId}`,
+    },
+    openGraph: {
+      title: `${cat.name} | Sentinelle Pulse`,
+      description: `Renseignement open source : OSINT, espionnage, cybersécurité, surveillance, services secrets.`,
+      type: 'website' as const,
+      images: [{ url: `${siteConfig.url}/og-image.jpg`, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: `${cat.name} | Sentinelle Pulse`,
+      description: `Renseignement open source : OSINT, espionnage, cybersécurité, surveillance, services secrets.`,
+      images: [`${siteConfig.url}/og-image.jpg`],
+      creator: '@sentinellepulse',
     },
   };
 }

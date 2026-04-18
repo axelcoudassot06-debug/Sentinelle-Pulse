@@ -251,6 +251,36 @@ h3 { font-size: 1.5rem; }
   .container { padding: 0 16px; }
 }
 
+/* ── Mobile Premium (768px) ── */
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 60px;
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+  h3 { font-size: 1.1rem; }
+
+  /* Lecture fluide */
+  article p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  /* Tables scrollables horizontalement */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  /* Safe area pour notch iPhone */
+  header {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
 /* Print styles */
 @media print {
   body {

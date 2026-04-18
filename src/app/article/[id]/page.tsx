@@ -4,10 +4,11 @@ import { notFound } from 'next/navigation';
 import { Calendar, Clock, ArrowLeft, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import ClientArticleWrapper from './ClientArticleWrapper';
-import { generateArticleSchema, siteConfig } from '@/lib/seo';
+import { generateArticleSchema, generateFAQSchema, generateBreadcrumbSchema, siteConfig } from '@/lib/seo';
 import ShareButtons from '@/components/ShareButtons';
 import ProfessionalContentRenderer from '@/components/ProfessionalContentRenderer';
 import ClientChartsWrapper from '@/components/ClientChartsWrapper';
+import ClientMobileFeatures from './ClientMobileFeatures';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -21,19 +22,45 @@ export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
   const article = getArticleById(id);
   if (!article) return { title: 'Article non trouvé' };
+
+  const keywords = [
+    ...article.title.split(/[\s—–\-·]+/).filter((w: string) => w.length > 4),
+    article.category,
+    'Sentinelle Pulse',
+    'analyse géopolitique',
+    'renseignement',
+  ];
+
   return {
     title: `${article.title} | Sentinelle Pulse`,
-    description: article.excerpt,
-    authors: [article.author],
-    publishedTime: article.date,
+    description: `${article.excerpt} Analyse approfondie, données chiffrées, chronologie.`,
+    keywords,
+    authors: [{ name: article.author }],
     openGraph: {
       title: article.title,
       description: article.excerpt,
       type: 'article',
       publishedTime: article.date,
+      modifiedTime: article.date,
       authors: [article.author],
+      section: article.category,
+      tags: keywords,
+      images: [{ url: `${siteConfig.url}/og-image.jpg`, width: 1200, height: 630, alt: article.title }],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: article.title,
+      description: article.excerpt,
+      images: [`${siteConfig.url}/og-image.jpg`],
+      creator: '@sentinellepulse',
     },
     alternates: { canonical: `${siteConfig.url}/article/${article.id}` },
+    robots: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large' as const,
+    },
   };
 }
 
@@ -61,26 +88,20 @@ export default async function ArticlePage({ params }: PageProps) {
   const bg = categoryBg[article.category];
   const chart = getArticleChart(id);
   const articleSchema = generateArticleSchema(article);
+  const breadcrumbSchema = generateBreadcrumbSchema(article, category?.name || '');
+  const faqSchema = generateFAQSchema(article);
   const formattedDate = new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 
   const relatedArticles = articles
     .filter(a => a.category === article.category && a.id !== article.id)
     .slice(0, 3);
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: siteConfig.url },
-      { '@type': 'ListItem', position: 2, name: category?.name || '', item: `${siteConfig.url}/${article.category}` },
-      { '@type': 'ListItem', position: 3, name: article.title, item: `${siteConfig.url}/article/${article.id}` },
-    ],
-  };
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      <ClientMobileFeatures color={color} />
 
       <article>
         {/* ── Hero gradient banner ── */}

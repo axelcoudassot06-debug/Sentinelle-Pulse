@@ -170,4 +170,9 @@
   .featured .thumbnailTitle {
     font-size: 0.95rem;
   }
+
+  .card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
 }

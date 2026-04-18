@@ -19,12 +19,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   }));
 
-  const articlePages = articles.map((article) => ({
-    url: `${baseUrl}/article/${article.id}`,
-    lastModified: new Date(article.date),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
+  const articlePages = articles.map((article) => {
+    const date = new Date(article.date);
+    const ageInDays = (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24);
+    const priority = ageInDays < 30 ? 0.95 : ageInDays < 90 ? 0.85 : 0.75;
+    return {
+      url: `${baseUrl}/article/${article.id}`,
+      lastModified: date,
+      changeFrequency: 'weekly' as const,
+      priority,
+    };
+  });
 
   const categoryPages = categories.map((cat) => ({
     url: `${baseUrl}/${cat.id}`,

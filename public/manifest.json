@@ -1,0 +1,27 @@
+{
+  "name": "Sentinelle Pulse",
+  "short_name": "Sentinelle",
+  "description": "Magazine d'analyse géopolitique, défense, OSINT et économie mondiale",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0F1A",
+  "theme_color": "#C41E3A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["news", "politics"],
+  "lang": "fr",
+  "scope": "/"
+}

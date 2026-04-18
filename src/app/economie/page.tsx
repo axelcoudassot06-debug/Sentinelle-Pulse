@@ -12,9 +12,23 @@ export function generateStaticParams() {
 export async function generateMetadata() {
   return {
     title: `${cat.name} | Sentinelle Pulse`,
-    description: `Articles sur l'actualité ${cat.name.toLowerCase()}. Analyses approfondies et actualité en temps réel sur ${cat.name.toLowerCase()}.`,
+    description: `Analyses économiques approfondies : sanctions, marchés financiers, intelligence économique, commerce international, banques centrales. Données chiffrées 2025-2026.`,
+    keywords: ['économie mondiale', 'finance internationale', 'marchés financiers', 'intelligence économique', 'sanctions économiques', 'commerce international', 'banques centrales', 'géopolitique économique'],
     alternates: {
       canonical: `${siteConfig.url}/${categoryId}`,
+    },
+    openGraph: {
+      title: `${cat.name} | Sentinelle Pulse`,
+      description: `Analyses économiques approfondies : sanctions, marchés financiers, intelligence économique, commerce international.`,
+      type: 'website' as const,
+      images: [{ url: `${siteConfig.url}/og-image.jpg`, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: `${cat.name} | Sentinelle Pulse`,
+      description: `Analyses économiques approfondies : sanctions, marchés financiers, intelligence économique.`,
+      images: [`${siteConfig.url}/og-image.jpg`],
+      creator: '@sentinellepulse',
     },
   };
 }
