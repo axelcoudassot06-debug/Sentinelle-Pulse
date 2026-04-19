@@ -19,6 +19,12 @@ export default function ContentRenderer({ content }: ContentRendererProps) {
   // 2. Strip orphaned DATA blocks in body
   html = html.replace(/<DATA>(.*?)<\/DATA>/g, '');
 
+  // 2b. UPDATE blocks → mise à jour datée (green banner, always first)
+  html = html.replace(/<UPDATE date="([^"]*)">([\s\S]*?)<\/UPDATE>/g, (_, date, body) => {
+    const processedBody = body.trim().replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    return `<div class="update-block"><div class="update-header"><span class="update-dot"></span><span class="update-label">MISE À JOUR</span><span class="update-date">${date}</span></div><div class="update-body">${processedBody}</div></div>`;
+  });
+
   // 3. QUOTE blocks → pull-quote
   html = html.replace(/<QUOTE>([\s\S]*?)<\/QUOTE>/g, (_, p1) => {
     return `<blockquote class="pull-quote"><span class="pq-mark">"</span><p>${p1.trim()}</p></blockquote>`;
@@ -124,6 +130,50 @@ export default function ContentRenderer({ content }: ContentRendererProps) {
 
   // Inline styles as a <style> tag
   const css = `
+    /* ── UPDATE block ── */
+    .art-body .update-block {
+      background: rgba(34,197,94,0.06);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-left: 3px solid #22c55e;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 0 0 2rem;
+      font-size: 0.925rem;
+    }
+    .art-body .update-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .art-body .update-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+    .art-body .update-label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #16a34a;
+    }
+    .art-body .update-date {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #16a34a;
+      opacity: 0.75;
+      margin-left: auto;
+    }
+    .art-body .update-body {
+      color: var(--text-primary);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .art-body .update-body strong { color: var(--text-primary); }
+
     .art-body {
       font-family: var(--font-body);
       font-size: 1.0625rem;
