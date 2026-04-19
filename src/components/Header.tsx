@@ -13,7 +13,9 @@ const navItems = [
   { href: '/osint',        label: 'OSINT',           color: '#0891B2', abbr: 'OST' },
 ];
 
-const TICKER = [
+interface TickerItem { tag: string; text: string; }
+
+const TICKER_FALLBACK: TickerItem[] = [
   { tag: 'FLASH',    text: 'Iran · Négociations nucléaires à Genève — position iranienne durcie, compte à rebours activé' },
   { tag: 'ANALYSE',  text: 'OTAN 5% · 18 membres atteignent l\'objectif en 2026 — supercycle de réarmement confirmé' },
   { tag: 'SIGNAL',   text: 'Mer de Chine · Activité navale PLA inhabituellement dense autour de Taïwan — semaine 16' },
@@ -29,6 +31,7 @@ export default function Header() {
   const [mobileOpen,  setMobileOpen]  = useState(false);
   const [searchOpen,  setSearchOpen]  = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [tickerItems, setTickerItems] = useState<TickerItem[]>(TICKER_FALLBACK);
   const [tickerIdx,   setTickerIdx]   = useState(0);
   const [tickerFade,  setTickerFade]  = useState(true);
   const [theme,       setTheme]       = useState('dark');
@@ -44,6 +47,19 @@ export default function Header() {
     setMounted(true);
   }, []);
 
+  /* ── live ticker feed ────────────────────────────────────── */
+  useEffect(() => {
+    fetch('/api/ticker')
+      .then(r => r.json())
+      .then((data: { items?: TickerItem[] }) => {
+        if (data?.items && data.items.length >= 3) {
+          setTickerItems(data.items);
+          setTickerIdx(0);
+        }
+      })
+      .catch(() => { /* network error — TICKER_FALLBACK stays */ });
+  }, []);
+
   /* ── scroll ─────────────────────────────────────────────── */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -56,12 +72,13 @@ export default function Header() {
     const interval = setInterval(() => {
       setTickerFade(false);
       setTimeout(() => {
-        setTickerIdx(i => (i + 1) % TICKER.length);
+        setTickerIdx(i => (i + 1) % tickerItems.length);
         setTickerFade(true);
       }, 350);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tickerItems.length]);
 
   /* ── close mobile on route change ───────────────────────── */
   useEffect(() => { setMobileOpen(false); }, [pathname]);
@@ -108,13 +125,13 @@ export default function Header() {
             className={styles.tickerTag}
             style={{ opacity: tickerFade ? 1 : 0, transition: 'opacity 0.35s' }}
           >
-            {TICKER[tickerIdx].tag}
+            {tickerItems[tickerIdx].tag}
           </span>
           <span
             className={styles.tickerText}
             style={{ opacity: tickerFade ? 1 : 0, transition: 'opacity 0.35s' }}
           >
-            {TICKER[tickerIdx].text}
+            {tickerItems[tickerIdx].text}
           </span>
         </div>
 

@@ -74,7 +74,9 @@ const CATEGORIES = [
 ];
 
 // ── TICKER ITEMS ──────────────────────────────────────────────────────────────
-const TICKERS = [
+interface TickerItem { tag: string; text: string; }
+
+const TICKERS_FALLBACK: TickerItem[] = [
   { tag: 'FLASH', text: 'Iran · Négociations nucléaires à Genève — délai de 72h, position iranienne durcie' },
   { tag: 'GÉO',   text: 'Arctique 2027 · La course aux ressources entre Moscou et Ottawa franchit un seuil critique' },
   { tag: 'DEF',   text: 'OTAN · Réarmement européen : objectif 5% du PIB acté à Bruxelles' },
@@ -91,9 +93,10 @@ export default function LandingPage() {
   const cursorDotRef  = useRef<HTMLDivElement>(null);
   const cursorRingRef = useRef<HTMLDivElement>(null);
 
-  const [show, setShow]   = useState(false);
-  const [time, setTime]   = useState('');
-  const [fade, setFade]   = useState(false);
+  const [show, setShow]           = useState(false);
+  const [time, setTime]           = useState('');
+  const [fade, setFade]           = useState(false);
+  const [tickerItems, setTickerItems] = useState<TickerItem[]>(TICKERS_FALLBACK);
 
   const articleCount = articles.length;
 
@@ -222,6 +225,16 @@ export default function LandingPage() {
     return () => document.removeEventListener('mousemove', move);
   }, []);
 
+  // ── LIVE TICKER ───────────────────────────────────────────────────────────
+  useEffect(() => {
+    fetch('/api/ticker')
+      .then(r => r.json())
+      .then((data: { items?: TickerItem[] }) => {
+        if (data?.items && data.items.length >= 3) setTickerItems(data.items);
+      })
+      .catch(() => { /* fallback already set */ });
+  }, []);
+
   // ── REVEAL ────────────────────────────────────────────────────────────────
   useEffect(() => {
     const t = setTimeout(() => setShow(true), 80);
@@ -285,7 +298,7 @@ export default function LandingPage() {
         </div>
         <div className={styles.tickerScroll}>
           <div className={styles.tickerInner}>
-            {TICKERS.map((t, i) => (
+            {tickerItems.map((t, i) => (
               <div key={i} className={styles.tickerItem}>
                 <span className={styles.tickerTag}>{t.tag}</span>
                 {t.text}
