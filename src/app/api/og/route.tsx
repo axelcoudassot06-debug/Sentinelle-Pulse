@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { getArticleById } from '@/lib/data';
 import { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 const categoryColors: Record<string, string> = {
   economie:    '#059669',
