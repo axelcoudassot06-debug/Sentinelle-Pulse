@@ -323,13 +323,13 @@ export default function LandingPage() {
           Édition Stratégique
         </div>
 
-        {/* SENTINELLE */}
+        {/* SENTINELLE — chaque lettre animée via CSS custom property --d */}
         <div className={styles.logoS}>
           {'SENTINELLE'.split('').map((ch, i) => (
             <span
               key={i}
               className={`${styles.char} ${show ? styles.charShow : ''}`}
-              style={{ transitionDelay: show ? `${0.70 + i * 0.042}s` : '0s' }}
+              style={{ '--d': `${0.70 + i * 0.042}s` } as React.CSSProperties}
             >
               {ch}
             </span>
@@ -342,28 +342,25 @@ export default function LandingPage() {
             <span
               key={i}
               className={`${styles.char} ${show ? styles.charShow : ''}`}
-              style={{ transitionDelay: show ? `${1.15 + i * 0.052}s` : '0s' }}
+              style={{ '--d': `${1.15 + i * 0.052}s` } as React.CSSProperties}
             >
               {ch}
             </span>
           ))}
         </div>
 
-        {/* Rule */}
-        <div className={`${styles.rule} ${show ? styles.ruleShow : ''}`}
-             style={{ transitionDelay: show ? '.4s' : '0s' }}>
+        {/* Rule — délai hardcodé dans le CSS (.4s) */}
+        <div className={`${styles.rule} ${show ? styles.ruleShow : ''}`}>
           <div className={styles.ruleDiamond} />
         </div>
 
-        {/* Tagline */}
-        <div className={`${styles.tagline} ${show ? styles.taglineShow : ''}`}
-             style={{ transitionDelay: show ? '.5s' : '0s' }}>
+        {/* Tagline — délai hardcodé dans le CSS (.5s) */}
+        <div className={`${styles.tagline} ${show ? styles.taglineShow : ''}`}>
           Intelligence · Géopolitique · Défense · Économie · Cyber & OSINT
         </div>
 
-        {/* Category cards */}
-        <div className={`${styles.cards} ${show ? styles.cardsShow : ''}`}
-             style={{ transitionDelay: show ? '.6s' : '0s' }}>
+        {/* Category cards — délai hardcodé dans le CSS (.6s) */}
+        <div className={`${styles.cards} ${show ? styles.cardsShow : ''}`}>
           {CATEGORIES.map(cat => (
             <div
               key={cat.id}
@@ -418,7 +415,6 @@ export default function LandingPage() {
       {/* ── SKIP BUTTON ── */}
       <button
         className={`${styles.skipBtn} ${show ? styles.skipBtnShow : ''}`}
-        style={{ transitionDelay: show ? '2.5s' : '0s' }}
         onClick={() => navigate('/analyses')}
         onMouseEnter={() => onHover(true)}
         onMouseLeave={() => onHover(false)}
