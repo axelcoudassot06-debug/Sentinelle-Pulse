@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Search, Moon, Sun, Menu, X, Shield } from 'lucide-react';
+import { Search, Moon, Sun, Menu, X } from 'lucide-react';
 import styles from './Header.module.css';
 
 const navItems = [
@@ -154,11 +154,11 @@ export default function Header() {
         {/* ── Logo ─────────────────────────────────────────── */}
         <Link href="/" className={styles.logo}>
           <span className={styles.logoMark}>
-            <Shield size={16} strokeWidth={2.5} />
+            <span className={styles.logoSP}>SP</span>
           </span>
           <span className={styles.logoWords}>
-            <span className={styles.logoSentinelle}>SENTINELLE</span>
-            <span className={styles.logoPulse}>PULSE</span>
+            <span className={styles.logoSentinelle}>Sentinelle</span>
+            <span className={styles.logoPulse}>Pulse</span>
           </span>
           <span className={styles.logoSeparator} />
           <span className={styles.logoSub}>Intelligence · Géopolitique</span>

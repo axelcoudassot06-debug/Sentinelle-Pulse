@@ -186,10 +186,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   background: linear-gradient(135deg, #C41E3A, #8B0020);
-  border-radius: 6px;
+  border-radius: 7px;
   color: white;
   flex-shrink: 0;
   box-shadow: 0 0 16px rgba(196,30,58,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
@@ -201,6 +201,16 @@
   transform: scale(1.04);
 }
 
+.logoSP {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  font-style: italic;
+}
+
 .logoWords {
   display: flex;
   flex-direction: column;
@@ -209,20 +219,23 @@
 }
 
 .logoSentinelle {
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   color: rgba(255,255,255,0.95);
-  font-family: var(--font-heading);
+  font-family: 'Playfair Display', var(--font-heading), serif;
+  line-height: 1;
 }
 
 .logoPulse {
-  font-size: 0.58rem;
+  font-size: 0.65rem;
   font-weight: 400;
-  letter-spacing: 0.32em;
-  color: rgba(255,255,255,0.38);
-  margin-top: 1px;
-  font-family: var(--font-heading);
+  font-style: italic;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.45);
+  margin-top: 2px;
+  font-family: 'Playfair Display', var(--font-heading), serif;
+  line-height: 1;
 }
 
 .logoSeparator {

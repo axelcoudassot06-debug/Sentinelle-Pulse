@@ -8,7 +8,7 @@ import styles from './MobileBottomNav.module.css';
 const navItems = [
   { href: '/', icon: Home, label: 'Accueil' },
   { href: '/search', icon: Search, label: 'Recherche' },
-  { href: '/geopolitique', icon: LayoutGrid, label: 'Catégories' },
+  { href: '/categories', icon: LayoutGrid, label: 'Catégories' },
   { href: '/a-propos', icon: Info, label: 'À propos' },
 ];
 
