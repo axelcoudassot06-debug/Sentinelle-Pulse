@@ -223,7 +223,7 @@ export async function GET(request: NextRequest) {
             color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em',
             display: 'flex',
           }}>
-            sentinelle-pulse.com
+            sentinellepulse.com
           </div>
         </div>
 

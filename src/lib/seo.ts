@@ -4,7 +4,7 @@ import { articles, categories } from '@/lib/data';
 export const siteConfig = {
   name: 'Sentinelle Pulse',
   description: "Sentinelle Pulse — Magazine d'analyse géopolitique, défense nationale, OSINT et économie mondiale. Décryptages experts, données chiffrées 2025-2026, chronologies stratégiques. Renseignement, guerre hybride, intelligence économique.",
-  url: 'https://sentinelle-pulse.com',
+  url: 'https://sentinellepulse.com',
   ogImage: '/api/og',
 };
 

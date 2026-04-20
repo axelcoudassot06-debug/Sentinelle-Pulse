@@ -45,7 +45,7 @@ export async function GET() {
     FEEDS.map(async ({ url, tag, max }) => {
       try {
         const res = await fetch(url, {
-          headers: { 'User-Agent': 'Sentinelle-Pulse/2.0 (+https://sentinelle-pulse.com)' },
+          headers: { 'User-Agent': 'Sentinelle-Pulse/2.0 (+https://sentinellepulse.com)' },
           signal: AbortSignal.timeout(4000),
         });
         if (!res.ok) return;
