@@ -263,13 +263,7 @@ h3 { font-size: 1.5rem; }
     line-height: 1.75;
   }
 
-  /* Tables scrollables horizontalement */
-  table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-  }
+  /* Tables : le wrapper .table-wrap gère overflow — ne pas changer display:table */
 
   /* Safe area pour notch iPhone */
   header {

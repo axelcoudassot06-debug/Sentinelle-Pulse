@@ -321,13 +321,18 @@ export default function ContentRenderer({ content }: ContentRendererProps) {
     /* ── Tables ── */
     .art-body .table-wrap {
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       margin: 2rem 0;
       border-radius: 8px;
       box-shadow: var(--shadow-sm);
+      /* contain the table so it scrolls within this wrapper */
+      display: block;
+      width: 100%;
     }
     .art-body table {
-      width: 100%;
-      min-width: 560px;
+      display: table;
+      width: max-content;
+      min-width: min(560px, 100%);
       border-collapse: collapse;
       font-size: 0.82rem;
       border-radius: 8px;

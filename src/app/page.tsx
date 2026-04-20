@@ -52,8 +52,8 @@ const CATEGORIES = [
     name: 'Armement &\nStratégie militaire',
     sub: 'Doctrines · OTAN\nSécurité nationale',
     href: '/defense',
-    img: 'https://images.unsplash.com/photo-1583953479406-e3b6e7e3ec67?w=900&q=80&auto=format&fit=crop',
-    imgPos: 'center 35%',
+    img: 'https://images.unsplash.com/photo-1570344238963-8d4f7f9e6b35?w=900&q=80&auto=format&fit=crop',
+    imgPos: 'center 40%',
   },
   {
     id: 'eco', tag: '03 —', cat: 'Économie', color: '#4a9068',

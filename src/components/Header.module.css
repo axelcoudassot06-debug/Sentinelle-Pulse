@@ -29,7 +29,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 40px;
   padding: 0 20px;
   background: rgba(196, 30, 58, 0.12);
   border-bottom: 1px solid rgba(196, 30, 58, 0.18);
@@ -65,7 +65,7 @@
 }
 
 .liveLabel {
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   color: #ef4444;
@@ -83,19 +83,19 @@
 
 .tickerTag {
   flex-shrink: 0;
-  font-size: 0.58rem;
+  font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   color: rgba(196, 30, 58, 1);
   background: rgba(196, 30, 58, 0.15);
   border: 1px solid rgba(196, 30, 58, 0.3);
-  padding: 2px 7px;
+  padding: 3px 8px;
   border-radius: 2px;
 }
 
 .tickerText {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.72);
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.80);
   letter-spacing: 0.01em;
   white-space: nowrap;
   overflow: hidden;
@@ -114,18 +114,18 @@
 }
 
 .tickerDate {
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.50);
   letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
 .tickerEdition {
-  font-size: 0.58rem;
+  font-size: 0.63rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.25);
   white-space: nowrap;
 }
 
@@ -653,11 +653,11 @@
   .logoSub        { display: none; }
   .logoSeparator  { display: none; }
 
-  /* Ticker encore plus compact sur petits téléphones */
-  .ticker { height: 26px; padding: 0 10px; }
+  /* Ticker compact sur petits téléphones */
+  .ticker { height: 34px; padding: 0 10px; }
   .tickerBadge { padding-right: 10px; margin-right: 10px; }
   .tickerTag { display: none; } /* tag masqué, texte seul */
-  .tickerText { font-size: 0.68rem; }
+  .tickerText { font-size: 0.75rem; }
   .liveLabel { display: none; }
 
   /* Recherche réduite */
