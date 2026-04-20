@@ -99,8 +99,41 @@
   .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 768px) {
+  /* Tabs : scroll horizontal, plus de wrap */
+  .tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 12px;
+    gap: 6px;
+    /* léger scroll indicator */
+    padding-right: 20px;
+    margin-right: -20px;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    flex-shrink: 0;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  /* Masquer le badge count — gain de place */
+  .tabCount { display: none; }
+}
+
 @media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; }
-  .tabs { gap: 4px; }
-  .tab { padding: 6px 12px; font-size: 0.75rem; }
+
+  .loadBtn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .tab { padding: 5px 12px; font-size: 0.72rem; }
+
+  .loadMore { margin-top: 24px; }
 }

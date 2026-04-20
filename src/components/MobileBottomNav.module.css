@@ -32,9 +32,14 @@
   height: 100%;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: color 150ms ease;
+  transition: color 120ms ease, transform 120ms ease;
   -webkit-tap-highlight-color: transparent;
   min-height: unset;
+  position: relative;
+}
+
+.navItem:active {
+  transform: scale(0.9);
 }
 
 .navItem:hover,
@@ -44,6 +49,19 @@
 
 .active {
   color: var(--accent-primary);
+}
+
+/* Trait indicateur actif en haut */
+.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: 0 0 2px 2px;
 }
 
 .label {

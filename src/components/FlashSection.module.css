@@ -1,5 +1,5 @@
 .section {
-  margin: 48px 0;
+  margin: 48px 0 40px;
 }
 
 .header {
@@ -211,8 +211,22 @@
   .grid { grid-template-columns: 1fr 1fr; }
   .cardFeatured { grid-column: 1 / -1; }
   .cardFeatured .thumb { height: 160px; }
+  .section { margin: 36px 0 28px; }
 }
 
 @media (max-width: 600px) {
-  .grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; gap: 10px; }
+  .section { margin: 28px 0 20px; }
+
+  /* Header épuré : badge + viewAll seulement, sans le texte intermédiaire */
+  .sub { display: none; }
+  .header { gap: 10px; margin-bottom: 14px; }
+}
+
+@media (max-width: 480px) {
+  .thumb { height: 120px; }
+  .cardFeatured .thumb { height: 140px; }
+  .body { padding: 10px 12px 14px; }
+  .title { font-size: 0.82rem; }
+  .excerpt { display: none; } /* excerpt trop verbeux sur micro-écran */
 }

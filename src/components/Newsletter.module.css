@@ -85,7 +85,14 @@
 }
 
 @media (max-width: 640px) {
-  .newsletter {
-    padding: 20px;
-  }
+  .newsletter { padding: 18px; }
+  .title { font-size: 1rem; }
+  .desc { font-size: 0.82rem; margin-bottom: 14px; }
+}
+
+@media (max-width: 480px) {
+  .newsletter { padding: 16px; border-radius: 10px; }
+  .input, .button { font-size: 0.82rem; padding: 11px 14px; }
+  /* Touch target minimum */
+  .button { min-height: 44px; }
 }

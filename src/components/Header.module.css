@@ -639,4 +639,20 @@
 @media (max-width: 480px) {
   .logoSub        { display: none; }
   .logoSeparator  { display: none; }
+
+  /* Ticker encore plus compact sur petits téléphones */
+  .ticker { height: 26px; padding: 0 10px; }
+  .tickerBadge { padding-right: 10px; margin-right: 10px; }
+  .tickerTag { display: none; } /* tag masqué, texte seul */
+  .tickerText { font-size: 0.68rem; }
+  .liveLabel { display: none; }
+
+  /* Recherche réduite */
+  .searchForm { animation: none; }
+  .searchInput { width: 130px; font-size: 0.76rem; }
+
+  /* Menu mobile : une seule colonne */
+  .mobileGrid { grid-template-columns: 1fr 1fr; gap: 6px; padding: 12px; }
+  .mobileCard { padding: 12px 14px; }
+  .mobileCardLabel { font-size: 0.82rem; }
 }

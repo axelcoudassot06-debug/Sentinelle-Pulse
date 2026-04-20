@@ -243,23 +243,19 @@ h3 { font-size: 1.5rem; }
   color: white;
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
-  .container { padding: 0 16px; }
-}
+/* ── Responsive — cascade du plus large au plus étroit ── */
 
-/* ── Mobile Premium (768px) ── */
+/* Tablet portrait / phablet */
 @media (max-width: 768px) {
   main {
-    padding-bottom: 60px;
+    padding-bottom: 72px; /* clearance mobile bottom nav (60px) + extra */
   }
 
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.35rem; }
   h3 { font-size: 1.1rem; }
+
+  .container { padding: 0 20px; }
 
   /* Lecture fluide */
   article p {
@@ -279,6 +275,30 @@ h3 { font-size: 1.5rem; }
   header {
     padding-top: env(safe-area-inset-top, 0px);
   }
+
+  /* Touch targets minimum 44px */
+  button, [role="button"], a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Mobile paysage / grand téléphone */
+@media (max-width: 640px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.05rem; }
+  .container { padding: 0 16px; }
+}
+
+/* Petit mobile (iPhone SE, Galaxy A) */
+@media (max-width: 480px) {
+  h1 { font-size: 1.35rem; }
+  h2 { font-size: 1.15rem; }
+  h3 { font-size: 1rem; }
+  .container { padding: 0 14px; }
+
+  /* Spacing global réduit */
+  .section { margin-top: 32px; margin-bottom: 32px; }
 }
 
 /* Print styles */

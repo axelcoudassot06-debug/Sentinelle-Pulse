@@ -109,3 +109,27 @@
     gap: 12px;
   }
 }
+
+/* ── Responsive: petit mobile ── */
+@media (max-width: 480px) {
+  .heroInner {
+    padding: 16px 14px 20px;
+  }
+
+  .excerptLead {
+    font-size: 0.92rem;
+    padding-left: 10px;
+    margin-bottom: 16px;
+  }
+
+  .articleGrid {
+    padding: 18px 0 72px; /* clearance bottom nav */
+    gap: 20px;
+  }
+
+  .authorStrip {
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+}

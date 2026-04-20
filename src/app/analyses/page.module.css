@@ -130,6 +130,16 @@
 }
 
 @media (max-width: 640px) {
-  .mainGrid { padding-bottom: 60px; }
+  .mainGrid { padding-bottom: 80px; }
   .trendingItem { padding: 8px 10px; }
+  .trendingNumber { font-size: 1.2rem; min-width: 20px; }
+  .trendingTitle { font-size: 0.78rem; }
+}
+
+@media (max-width: 480px) {
+  .sideSection { padding: 14px 14px 12px; margin-bottom: 16px; border-radius: 10px; }
+  .trendingItem { padding: 7px 8px; gap: 8px; }
+  .trendingNumber { font-size: 1.1rem; }
+  .trendingTitle { font-size: 0.75rem; }
+  .sideSectionTitle { font-size: 0.68rem; }
 }
