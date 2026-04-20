@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { articles, getFeaturedArticle, getTrendingArticles } from '@/lib/data';
+import { siteConfig } from '@/lib/seo';
 import Hero from '@/components/Hero';
 import StatsBar from '@/components/StatsBar';
 import FlashSection from '@/components/FlashSection';
@@ -13,7 +14,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'Analyses — Sentinelle Pulse',
   description: `${articles.length} analyses géopolitiques, défense, économie et OSINT. Sources primaires, données 2025-2026.`,
-  alternates: { canonical: 'https://sentinelle-pulse.vercel.app/analyses' },
+  alternates: { canonical: `${siteConfig.url}/analyses` },
 };
 
 export default function AnalysesPage() {

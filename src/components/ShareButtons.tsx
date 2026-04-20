@@ -2,6 +2,7 @@
 
 import { Share2, Check } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { siteConfig } from '@/lib/seo';
 
 interface ShareButtonsProps {
   title: string;
@@ -10,7 +11,7 @@ interface ShareButtonsProps {
 
 export default function ShareButtons({ title, url }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
-  const [shareUrl, setShareUrl] = useState('https://sentinelle-pulse.vercel.app' + url);
+  const [shareUrl, setShareUrl] = useState(siteConfig.url + url);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

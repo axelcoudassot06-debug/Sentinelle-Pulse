@@ -223,7 +223,7 @@ export async function GET(request: NextRequest) {
             color: 'rgba(255,255,255,0.25)', letterSpacing: '0.08em',
             display: 'flex',
           }}>
-            sentinelle-pulse.vercel.app
+            sentinelle-pulse.com
           </div>
         </div>
 

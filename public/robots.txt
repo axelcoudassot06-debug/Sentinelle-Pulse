@@ -2,8 +2,8 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://sentinelle-pulse.vercel.app/sitemap.xml
-Sitemap: https://sentinelle-pulse.vercel.app/news-sitemap.xml
+Sitemap: https://sentinelle-pulse.com/sitemap.xml
+Sitemap: https://sentinelle-pulse.com/news-sitemap.xml
 
 # Crawl-delay for bots
 User-agent: AhrefsBot
